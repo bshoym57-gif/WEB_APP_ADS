@@ -1,0 +1,2384 @@
+(() => {
+  const _0x85e612 = "2026-08-01";
+  const _0x96efee = "@MRRAJUALI";
+  document.addEventListener("contextmenu", _0x70f832 => _0x70f832.preventDefault());
+  document.addEventListener("keydown", _0x58387f => {
+    if (_0x58387f.key === "F12" || _0x58387f.ctrlKey && _0x58387f.shiftKey && (_0x58387f.key === "I" || _0x58387f.key === "i" || _0x58387f.key === "J" || _0x58387f.key === "j" || _0x58387f.key === "C" || _0x58387f.key === "c") || _0x58387f.ctrlKey && (_0x58387f.key === "U" || _0x58387f.key === "u")) {
+      _0x58387f.preventDefault();
+      return false;
+    }
+  });
+  const _0x358773 = new Date().toISOString().split("T")[0];
+  if (_0x358773 > _0x85e612) {
+    const _0x4cb90d = document.createElement("style");
+    _0x4cb90d.textContent = "\n            #expired-modal {\n                position: fixed; inset: 0; background: #030712; z-index: 1000000000;\n                display: flex; align-items: center; justify-content: center;\n                font-family: 'Plus Jakarta Sans', sans-serif; color: #fff;\n            }\n            #expired-modal::before {\n                content: ''; position: absolute; inset: 0;\n                background-image: radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);\n                pointer-events: none;\n            }\n            .expired-container {\n                width: 480px; padding: 48px; background: rgba(17, 24, 39, 0.7);\n                backdrop-filter: blur(30px) saturate(180%); border: 1px solid rgba(239, 68, 68, 0.3);\n                border-radius: 32px; text-align: center; position: relative;\n                box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(239, 68, 68, 0.05);\n                animation: expire-entry 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);\n            }\n            @keyframes expire-entry { from { opacity: 0; transform: scale(0.9) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }\n            .expired-icon { font-size: 60px; margin-bottom: 24px; filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.4)); }\n            .expired-title { font-weight: 800; font-size: 28px; margin-bottom: 12px; background: linear-gradient(to right, #ef4444, #f87171); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }\n            .expired-msg { color: #9ca3af; font-size: 15px; line-height: 1.6; margin-bottom: 36px; }\n            .expired-btn { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #ef4444, #dc2626); color: #fff; padding: 16px 32px; border-radius: 16px; font-weight: 800; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3); }\n            .expired-btn:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(239, 68, 68, 0.4); filter: brightness(1.1); }\n        ";
+    document.head.appendChild(_0x4cb90d);
+    const _0x5616c0 = document.createElement("div");
+    _0x5616c0.id = "expired-modal";
+    _0x5616c0.innerHTML = "\n            <div class=\"expired-container\">\n                <div class=\"expired-icon\">🔒</div>\n                <h1 class=\"expired-title\">Access Expired</h1>\n                <p class=\"expired-msg\">Our Telegram channel is currently not working. If you want to buy the Pro version, please contact the developer directly.</p>\n                <a href=\"https://t.me/" + _0x96efee.replace("@", "") + "\" class=\"expired-btn\" target=\"_blank\">\n                    <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"22\" y1=\"2\" x2=\"11\" y2=\"13\"></line><polygon points=\"22 2 15 22 11 13 2 9 22 2\"></polygon></svg>\n                    Contact Developer: Mr. Raju Ali\n                </a>\n            </div>\n        ";
+    document.body.appendChild(_0x5616c0);
+    return;
+  }
+  const _0x3eea75 = _0x3ef36a => new URLSearchParams(location.search).get(_0x3ef36a) || "";
+  const _0x10a397 = _0x9403f5 => new Promise(_0x2bef12 => setTimeout(_0x2bef12, _0x9403f5));
+  const _0x5848e6 = _0x3c0d33 => {
+    const _0x3a6961 = document.cookie.match(new RegExp("(^| )" + _0x3c0d33 + "=([^;]+)"));
+    if (_0x3a6961) {
+      return decodeURIComponent(_0x3a6961[2]);
+    } else {
+      return "";
+    }
+  };
+  const _0x27facc = _0x5848e6("c_user") || "";
+  let _0x18c23b = null;
+  let _0x577f34 = null;
+  function _0xc76cea(_0x25d341, _0x10f974) {
+    try {
+      if (!_0x25d341 || typeof _0x25d341 !== "object") {
+        return null;
+      }
+      if (Object.prototype.hasOwnProperty.call(_0x25d341, _0x10f974)) {
+        return _0x25d341[_0x10f974];
+      }
+      for (const _0x506412 in _0x25d341) {
+        const _0x153d46 = _0x25d341[_0x506412];
+        const _0xdb0556 = _0xc76cea(_0x153d46, _0x10f974);
+        if (_0xdb0556) {
+          return _0xdb0556;
+        }
+      }
+    } catch (_0x48a730) {}
+    return null;
+  }
+  function _0x2352b9(_0x5c54f9) {
+    const _0x24cec5 = document.querySelectorAll("script");
+    for (const _0x10d230 of _0x24cec5) {
+      const _0x242976 = _0x10d230.textContent || "";
+      const _0x227369 = _0x242976.match(_0x5c54f9);
+      if (_0x227369 && _0x227369[1]) {
+        return _0x227369[1];
+      }
+    }
+    return null;
+  }
+  function _0x39db6e() {
+    if (_0x18c23b) {
+      return _0x18c23b;
+    }
+    const _0x37eba8 = document.querySelector("input[name=\"fb_dtsg\"]");
+    if (_0x37eba8 && _0x37eba8.value) {
+      return _0x18c23b = _0x37eba8.value;
+    }
+    if (window.__DTSGInitialData && window.__DTSGInitialData.token) {
+      return _0x18c23b = window.__DTSGInitialData.token;
+    }
+    let _0x4169ec = _0x2352b9(/"DTSGInitialData"\s*:\s*\{"token"\s*:\s*"([^"]+)"/);
+    if (_0x4169ec) {
+      return _0x18c23b = _0x4169ec;
+    }
+    _0x4169ec = _0x2352b9(/fb_dtsg["']?\s*[:=]\s*["']([^"']+)["']/);
+    if (_0x4169ec) {
+      return _0x18c23b = _0x4169ec;
+    }
+    try {
+      const _0x161194 = window.require;
+      if (typeof _0x161194 === "function") {
+        const _0x35a798 = _0x161194("DTSGInitialData");
+        if (_0x35a798 && _0x35a798.token) {
+          return _0x18c23b = _0x35a798.token;
+        }
+      }
+    } catch (_0x531904) {}
+    const _0x53cfc7 = _0xc76cea(window, "DTSGInitialData");
+    if (_0x53cfc7 && _0x53cfc7.token) {
+      return _0x18c23b = _0x53cfc7.token;
+    }
+    return null;
+  }
+  function _0x173620() {
+    if (_0x577f34) {
+      return _0x577f34;
+    }
+    const _0x9a7e77 = document.querySelector("meta[name=\"lsd\"]");
+    if (_0x9a7e77 && _0x9a7e77.content) {
+      return _0x577f34 = _0x9a7e77.content;
+    }
+    let _0x3c72df = _0x2352b9(/"LSD"\s*,\s*\[\]\s*,\s*\{"token"\s*:\s*"([^"]+)"/);
+    if (_0x3c72df) {
+      return _0x577f34 = _0x3c72df;
+    }
+    _0x3c72df = _0x2352b9(/"lsd"\s*:\s*"([^"]+)"/);
+    if (_0x3c72df) {
+      return _0x577f34 = _0x3c72df;
+    }
+    _0x3c72df = _0x5848e6("lsd");
+    if (_0x3c72df) {
+      return _0x577f34 = _0x3c72df;
+    }
+    const _0x16c969 = _0xc76cea(window, "LSD");
+    if (_0x16c969 && _0x16c969.token) {
+      return _0x577f34 = _0x16c969.token;
+    }
+    return null;
+  }
+  function _0x292cdc() {
+    if (!location.hostname.includes("facebook.com")) {
+      alert("❌ This script must be run on facebook.com\n\nPlease:\n1. Go to Facebook.com\n2. Navigate to a boost page\n3. Wait 3-5 seconds\n4. Run this script in the browser console");
+      return false;
+    }
+    if (!_0x27facc) {
+      alert("❌ Not logged in to Facebook\n\nPlease log in to your Facebook account first.");
+      return false;
+    }
+    const _0x1a3701 = _0x39db6e();
+    const _0x278730 = _0x173620();
+    if (!_0x1a3701 || !_0x278730) {
+      alert("⚠️ Facebook tokens not found\n\nPlease:\n1. Refresh the page\n2. Wait 3-5 seconds for the page to fully load\n3. Run this script again\n\nTip: Make sure you're on a Facebook boost or ads page.");
+      return false;
+    }
+    console.log("✅ Pre-flight check passed!");
+    return true;
+  }
+  if (!_0x292cdc()) {
+    return;
+  }
+  function _0x3d30cd(_0x5ee9fe) {
+    if (!_0x5ee9fe) {
+      return "22000";
+    }
+    let _0x4c1ae9 = 0;
+    for (let _0x40c6d8 = 0; _0x40c6d8 < _0x5ee9fe.length; _0x40c6d8++) {
+      _0x4c1ae9 += _0x5ee9fe.charCodeAt(_0x40c6d8);
+    }
+    return "2" + _0x4c1ae9;
+  }
+  async function _0x1971f7(_0x4a96de, _0x3067b8, _0x651375, _0x496e5d = null) {
+    const _0x3cd1f6 = _0x39db6e();
+    const _0x5f0836 = _0x173620();
+    const _0x5354fa = _0x496e5d || _0x59de9d();
+    if (!_0x5354fa) {
+      throw new Error("Not logged in (user ID missing).");
+    }
+    if (!_0x3cd1f6 || !_0x5f0836) {
+      throw new Error("Facebook tokens missing. Please refresh page and try again.");
+    }
+    const _0x180cef = new URLSearchParams();
+    _0x180cef.append("av", _0x5354fa);
+    _0x180cef.append("__user", _0x5354fa);
+    _0x180cef.append("__a", "1");
+    _0x180cef.append("fb_dtsg", _0x3cd1f6);
+    _0x180cef.append("jazoest", _0x3d30cd(_0x3cd1f6));
+    _0x180cef.append("lsd", _0x5f0836);
+    _0x180cef.append("variables", JSON.stringify(_0x3067b8));
+    _0x180cef.append("doc_id", _0x4a96de);
+    _0x180cef.append("fb_api_caller_class", "RelayModern");
+    _0x180cef.append("fb_api_req_friendly_name", _0x651375 || "BoostTool");
+    _0x180cef.append("server_timestamps", "true");
+    const _0x12c808 = await fetch("https://www.facebook.com/api/graphql/", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "X-FB-LSD": _0x5f0836
+      },
+      body: _0x180cef.toString()
+    });
+    const _0x2a2880 = await _0x12c808.text();
+    const _0x259fda = _0x2a2880.split("\n").filter(_0x416e1c => _0x416e1c.trim());
+    for (const _0x4e06db of _0x259fda) {
+      try {
+        const _0x49c737 = JSON.parse(_0x4e06db);
+        if (_0x49c737.data || _0x49c737.errors) {
+          return _0x49c737;
+        }
+      } catch (_0x3c3dcd) {}
+    }
+    if (_0x2a2880.trim().startsWith("<!DOCTYPE") || _0x2a2880.includes("<html")) {
+      throw new Error("GraphQL returned HTML. Tokens stale/blocked. Refresh page.");
+    }
+    throw new Error("Invalid GraphQL response.");
+  }
+  const _0x13500b = document.createElement("style");
+  _0x13500b.textContent = "\n#simplifiedBoostModal * { box-sizing: border-box; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }\n\n:root {\n  --primary: #3b82f6;\n  --primary-glow: rgba(59, 130, 246, 0.5);\n  --success: #10b981;\n  --success-glow: rgba(16, 185, 129, 0.5);\n  --bg-dark: #0f172a;\n  --bg-glass: rgba(15, 23, 42, 0.85);\n  --border-glass: rgba(255, 255, 255, 0.1);\n  --text-main: #f8fafc;\n  --text-muted: #94a3b8;\n  --sidebar-grad: linear-gradient(165deg, #1e293b 0%, #0f172a 100%);\n  --accent-glow: 0 0 20px rgba(59, 130, 246, 0.3);\n}\n\n@keyframes modal-in {\n  from { opacity: 0; transform: scale(0.9) translateY(20px); }\n  to { opacity: 1; transform: scale(1) translateY(0); }\n}\n\n#simplifiedBoostModal {\n  position: fixed; inset: 0; background: rgba(2, 6, 23, 0.7);\n  backdrop-filter: blur(12px);\n  z-index: 999999999; display: flex; align-items: center; justify-content: center;\n  font-family: 'Inter', system-ui, -apple-system, sans-serif;\n  color: var(--text-main);\n}\n\n#simplifiedBoostBox {\n  width: 930px; height: 708px; max-width: 95vw; max-height: 95vh;\n  background: var(--bg-glass);\n  backdrop-filter: blur(30px) saturate(180%);\n  border: 1px solid rgba(255, 255, 255, 0.16);\n  border-radius: 24px; overflow: hidden;\n  box-shadow: \n    0 30px 60px -15px rgba(0, 0, 0, 0.8),\n    0 0 0 1px rgba(255, 255, 255, 0.08),\n    0 0 35px 0px rgba(59, 130, 246, 0.3),\n    0 0 70px 10px rgba(139, 92, 246, 0.15);\n  display: flex; flex-direction: row;\n  position: relative;\n  animation: modal-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);\n}\n\n.simple-sidebar {\n  width: 280px;\n  background: var(--sidebar-grad);\n  padding: 32px 24px;\n  display: flex; flex-direction: column;\n  border-right: 1px solid var(--border-glass);\n  flex-shrink: 0;\n  overflow-y: auto;\n}\n\n.brand-section {\n  display: flex; align-items: center; gap: 12px; margin-bottom: 32px;\n}\n\n.brand-logo {\n  display: flex; align-items: center; justify-content: center;\n}\n\n.sidebar-title { \n  font-size: 18px; font-weight: 800; margin: 0; \n  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);\n  -webkit-background-clip: text; -webkit-text-fill-color: transparent;\n  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.7));\n}\n\n.simple-main {\n  flex: 1; display: flex; flex-direction: column;\n  background: transparent; overflow: hidden;\n}\n\n.simple-header {\n  padding: 24px 32px;\n  display: flex; align-items: center; justify-content: space-between;\n  border-bottom: 1px solid var(--border-glass);\n  cursor: grab;\n}\n\n.simple-header h3 { \n  margin: 0; font-size: 20px; font-weight: 700; color: #fff;\n}\n\n.simple-close {\n  width: 36px; height: 36px; border-radius: 12px;\n  border: 1px solid var(--border-glass); cursor: pointer;\n  background: rgba(255, 255, 255, 0.05); color: var(--text-muted);\n  display: flex; align-items: center; justify-content: center;\n}\n\n.simple-close:hover { background: #ef4444; color: #fff; border-color: #ef4444; transform: rotate(90deg); }\n\n.simple-content {\n  padding: 32px; overflow-y: auto; flex: 1;\n  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;\n}\n\n.simple-group { display: flex; flex-direction: column; gap: 8px; }\n\n.simple-label { \n  font-size: 11px; font-weight: 700; color: var(--text-muted); \n  display: flex; align-items: center; gap: 6px;\n  text-transform: uppercase; letter-spacing: 0.5px;\n}\n\n.simple-input, .simple-select {\n  width: 100%; border: 1px solid var(--border-glass);\n  background: rgba(255, 255, 255, 0.03);\n  border-radius: 10px; padding: 10px 14px; font-size: 13px;\n  color: #fff; transition: all 0.2s ease;\n}\n\n.simple-input:focus, .simple-select:focus {\n  outline: none; border-color: var(--primary); \n  background: rgba(255, 255, 255, 0.07);\n  box-shadow: 0 0 12px var(--primary-glow);\n}\n\n.simple-select option {\n  background: #0f172a;\n  color: #fff;\n}\n\n.simple-footer {\n  padding: 24px 32px; border-top: 1px solid var(--border-glass);\n  background: rgba(15, 23, 42, 0.4);\n}\n\n.simple-btn {\n  width: 100%; border: 0; border-radius: 14px; padding: 16px;\n  font-weight: 700; cursor: pointer; font-size: 16px;\n  background: var(--primary); color: #fff;\n  box-shadow: 0 4px 20px var(--primary-glow);\n  display: flex; align-items: center; justify-content: center; gap: 10px;\n}\n\n.simple-btn:hover:not(:disabled) {\n  transform: translateY(-2px);\n  filter: brightness(1.1);\n  box-shadow: 0 8px 25px var(--primary-glow);\n}\n\n.simple-btn:disabled { opacity: 0.5; cursor: not-allowed; }\n\n.sidebar-info {\n  background: rgba(255, 255, 255, 0.02);\n  border: 1px solid var(--border-glass);\n  border-radius: 16px; padding: 18px; margin-bottom: 20px;\n}\n\n.sidebar-info-item {\n  display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;\n}\n\n.sidebar-info-item:last-child { margin-bottom: 0; }\n\n.side-label-row {\n  display: flex; align-items: center; gap: 8px;\n  font-size: 10px; font-weight: 800; color: var(--text-muted);\n  text-transform: uppercase; letter-spacing: 1px;\n}\n\n.side-label-row svg { color: var(--primary); }\n\n.side-control-row {\n  display: flex; align-items: center; justify-content: center; gap: 15px;\n  background: transparent; padding: 0; border: none; width: 100%;\n}\n\n.sidebar-info-item select, .sidebar-info-item input {\n  background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05);\n  color: #fff; font-size: 11px; font-weight: 800; cursor: pointer;\n  padding: 6px 10px; border-radius: 8px; width: 100%;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n}\n\n.sidebar-info-item input[type=\"number\"] {\n  width: 52px; text-align: center; -moz-appearance: textfield;\n  background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);\n  padding: 7px 0; border-radius: 10px; font-weight: 900; font-size: 13px;\n  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);\n}\n\n.sidebar-info-item input[type=\"number\"]:focus {\n  background: #fff; color: var(--primary); border-color: #fff;\n  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); transform: scale(1.05);\n}\n\n.sidebar-info-item input::-webkit-outer-spin-button, .sidebar-info-item input::-webkit-inner-spin-button {\n  -webkit-appearance: none; margin: 0;\n}\n\n.sidebar-info-item select:hover, .sidebar-info-item input:hover {\n  background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2);\n}\n\n.sidebar-info-item select:focus, .sidebar-info-item input:focus {\n  outline: none; background: rgba(255, 255, 255, 0.05);\n  border-color: #fff; box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);\n}\n\n.sidebar-info-item select option, .sidebar-guide select option {\n  background: #1e293b;\n  color: #fff;\n}\n\n.side-badge {\n  display: flex; align-items: center; gap: 6px;\n  background: rgba(16, 185, 129, 0.08); color: var(--success);\n  padding: 6px 10px; border-radius: 8px; font-size: 10px; font-weight: 800;\n  border: 1px solid rgba(16, 185, 129, 0.15); text-transform: uppercase;\n}\n\n.sidebar-guide {\n  background: linear-gradient(145deg, rgba(30, 41, 59, 0.3), rgba(15, 23, 42, 0.3));\n  border: 1px solid rgba(59, 130, 246, 0.12);\n  border-radius: 14px; padding: 14px; position: relative; overflow: hidden;\n}\n\n.sidebar-guide::after {\n  content: ''; position: absolute; left: 0; top: 0; width: 3px; height: 100%;\n  background: var(--primary); opacity: 0.6;\n}\n\n.guide-title {\n  font-size: 10px; font-weight: 800; text-transform: uppercase;\n  color: var(--primary); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;\n  letter-spacing: 1px;\n}\n\n.guide-step {\n  display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;\n  font-size: 10.5px; color: var(--text-muted); line-height: 1.5;\n  transition: all 0.3s ease; cursor: default; letter-spacing: 0.2px;\n}\n\n.guide-step:hover { transform: translateX(5px); color: #fff; }\n\n.guide-step:last-child { margin-bottom: 0; }\n\n.step-marker {\n  width: 16px; height: 16px; background: var(--primary); color: #fff;\n  border-radius: 4px; display: flex; align-items: center; justify-content: center;\n  font-size: 9px; font-weight: 900; flex-shrink: 0; margin-top: 1px;\n  box-shadow: 0 0 10px var(--primary-glow); transition: all 0.3s ease;\n}\n\n.guide-step:hover .step-marker {\n  background: #fff; color: var(--primary);\n  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); transform: scale(1.1);\n}\n\n.sidebar-footer { margin-top: auto; padding-top: 24px; }\n\n.sidebar-btn {\n  width: 100%; padding: 11px; border-radius: 13px;\n  color: #fff; font-weight: 800; font-size: 11px;\n  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;\n  text-decoration: none; border: 1px solid var(--border-glass);\n  background: rgba(255, 255, 255, 0.05); transition: all 0.3s ease;\n  text-transform: uppercase; letter-spacing: 0.8px;\n}\n\n.sidebar-btn:hover { \n  background: rgba(255, 255, 255, 0.1); \n  border-color: var(--primary);\n  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);\n  transform: translateY(-2px);\n}\n\n.simple-status {\n  padding: 20px; border-radius: 16px; font-size: 14px; font-weight: 500;\n  margin-top: 20px; display: none;\n}\n\n.simple-status.info { background: rgba(59, 130, 246, 0.1); color: var(--primary); border: 1px solid rgba(59, 130, 246, 0.2); }\n.simple-status.success { background: rgba(16, 185, 129, 0.1); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.2); }\n.simple-status.error { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }\n\n.spinner {\n  width: 20px; height: 20px; border: 3px solid rgba(255, 255, 255, 0.3);\n  border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite;\n}\n\n@keyframes spin { to { transform: rotate(360deg); } }\n\n::-webkit-scrollbar { width: 6px; }\n::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }\n\n.fast-post-tool {\n  grid-column: span 2;\n  background: rgba(255, 255, 255, 0.02);\n  border: 1px solid rgba(255, 255, 255, 0.08);\n  border-radius: 20px;\n  padding: 18px;\n  margin-bottom: 12px;\n  backdrop-filter: blur(10px);\n  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);\n}\n\n.fast-post-tool h4 {\n  margin: 0 0 14px 0;\n  font-size: 12px;\n  font-weight: 800;\n  color: var(--primary);\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  text-transform: uppercase;\n  letter-spacing: 1.2px;\n  opacity: 0.9;\n}\n\n.file-input-wrapper {\n  position: relative;\n  overflow: hidden;\n  display: block;\n  width: 100%;\n}\n\n.file-input-btn {\n  background: rgba(255, 255, 255, 0.04);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  color: var(--text-main);\n  padding: 10px 15px;\n  border-radius: 12px;\n  font-size: 11px;\n  font-weight: 700;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  width: 100%;\n  justify-content: center;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n}\n\n.file-input-btn:hover {\n  background: rgba(59, 130, 246, 0.1);\n  border-color: var(--primary);\n  transform: translateY(-1px);\n  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.1);\n}\n\n.fast-post-tool input[type=\"file\"] {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  cursor: pointer;\n  z-index: 10;\n}\n\n#post_preview_container {\n  width: 100%;\n  border-radius: 12px;\n  overflow: hidden;\n  border: 1px solid rgba(255,255,255,0.1);\n  background: rgba(0,0,0,0.4);\n  margin-bottom: 12px;\n  display: none;\n  animation: fadeIn 0.3s ease-out;\n}\n\n#post_preview_img {\n  width: 100%;\n  height: auto;\n  display: block;\n  object-fit: cover;\n  max-height: 450px;\n  background: rgba(0,0,0,0.2);\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.post-action-btn {\n  background: linear-gradient(135deg, #10b981 0%, #059669 100%);\n  color: #fff;\n  border: 0;\n  border-radius: 12px;\n  padding: 12px;\n  font-weight: 800;\n  font-size: 12px;\n  cursor: pointer;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  text-transform: uppercase;\n  letter-spacing: 0.5px;\n}\n\n.post-action-btn:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);\n  filter: brightness(1.1);\n}\n\n.post-action-btn:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n\n/* Custom Multi-Select Dropdown Container */\n.multi-select-container {\n  position: relative;\n  width: 100%;\n}\n\n.multi-select-trigger {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  border: 1px solid var(--border-glass);\n  background: rgba(255, 255, 255, 0.03);\n  border-radius: 10px;\n  padding: 10px 14px;\n  font-size: 13px;\n  color: #fff;\n  cursor: pointer;\n  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;\n}\n\n.multi-select-trigger:hover {\n  background: rgba(255, 255, 255, 0.08);\n  border-color: rgba(59, 130, 246, 0.5);\n  box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);\n}\n\n.multi-select-trigger.active {\n  border-color: var(--primary);\n  box-shadow: 0 0 12px var(--primary-glow);\n}\n\n.multi-select-trigger-text {\n  font-weight: 500;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.multi-select-dropdown {\n  position: absolute;\n  top: calc(100% + 6px);\n  left: 0;\n  width: 100%;\n  background: #0f172a;\n  border: 1px solid var(--border-glass);\n  border-radius: 12px;\n  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);\n  z-index: 1000;\n  display: none;\n  flex-direction: column;\n  overflow: hidden;\n  animation: fadeIn 0.2s ease-out;\n}\n\n.multi-select-dropdown.show {\n  display: flex;\n}\n\n.multi-select-search-wrapper {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  padding: 10px;\n  border-bottom: 1px solid var(--border-glass);\n  background: rgba(255, 255, 255, 0.02);\n}\n\n.multi-select-search {\n  flex: 1;\n  background: rgba(0, 0, 0, 0.2);\n  border: 1px solid var(--border-glass);\n  border-radius: 8px;\n  color: #fff;\n  padding: 8px 12px;\n  font-size: 12px;\n  outline: none;\n  transition: border-color 0.2s;\n}\n\n.multi-select-search:focus {\n  border-color: var(--primary);\n}\n\n.multi-select-clear-btn {\n  background: rgba(239, 68, 68, 0.1);\n  border: 1px solid rgba(239, 68, 68, 0.2);\n  color: #f87171;\n  padding: 6px 12px;\n  border-radius: 8px;\n  font-size: 11px;\n  font-weight: 700;\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n}\n\n.multi-select-clear-btn:hover {\n  background: rgba(239, 68, 68, 0.25);\n  color: #fff;\n  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);\n}\n\n.multi-select-options {\n  max-height: 200px;\n  overflow-y: auto;\n  padding: 6px 0;\n}\n\n.multi-select-option {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 8px 14px;\n  cursor: pointer;\n  font-size: 13px;\n  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n}\n\n.multi-select-option:hover {\n  background: rgba(59, 130, 246, 0.15);\n  color: #fff;\n}\n\n.multi-select-option input[type=\"checkbox\"] {\n  accent-color: var(--primary);\n  width: 15px;\n  height: 15px;\n  cursor: pointer;\n}\n\n.multi-select-tags-container {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 6px;\n  margin-top: 8px;\n  grid-column: span 2;\n}\n\n.multi-select-tag {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  background: rgba(59, 130, 246, 0.1);\n  border: 1px solid rgba(59, 130, 246, 0.2);\n  color: #93c5fd;\n  font-size: 11px;\n  font-weight: 600;\n  padding: 4px 8px;\n  border-radius: 6px;\n  animation: fadeIn 0.2s ease-out;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n}\n\n.multi-select-tag:hover {\n  border-color: var(--primary);\n  background: rgba(59, 130, 246, 0.2);\n  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);\n  transform: translateY(-1px);\n}\n\n.multi-select-tag-remove {\n  cursor: pointer;\n  color: #f87171;\n  font-weight: 800;\n  font-size: 12px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 14px;\n  height: 14px;\n  border-radius: 50%;\n  transition: background 0.2s;\n}\n\n.multi-select-tag-remove:hover {\n  background: rgba(239, 68, 68, 0.2);\n  color: #ef4444;\n}\n\n";
+  document.head.appendChild(_0x13500b);
+  const _0x37c559 = document.createElement("div");
+  _0x37c559.id = "simplifiedBoostModal";
+  _0x37c559.innerHTML = "\n<div id=\"simplifiedBoostBox\">\n  <div class=\"simple-sidebar\">\n    <div class=\"brand-section\">\n      <div class=\"brand-logo\">\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <!-- Back pages / layer shadow -->\n          <path d=\"M9 20C6 19, 4 19, 2 19.5V10.5C4 10, 6 10, 9 11Z\" fill=\"rgba(255,255,255,0.15)\" />\n          <path d=\"M15 20C18 19, 20 19, 22 19.5V10.5C20 10, 18 10, 15 11Z\" fill=\"rgba(255,255,255,0.15)\" />\n          \n          <!-- Front pages (book layout) -->\n          <path d=\"M9 19C6 18, 4 18, 2.5 18.5V9.5C4 9, 6 9, 9 10Z\" fill=\"rgba(15, 23, 42, 0.9)\" stroke=\"rgba(255, 255, 255, 0.4)\" stroke-width=\"1.2\" stroke-linejoin=\"round\" />\n          <path d=\"M15 19C18 18, 20 18, 21.5 18.5V9.5C20 9, 18 9, 15 10Z\" fill=\"rgba(15, 23, 42, 0.9)\" stroke=\"rgba(255, 255, 255, 0.4)\" stroke-width=\"1.2\" stroke-linejoin=\"round\" />\n          \n          <!-- Glowing green growth arrow rising from book -->\n          <path d=\"M12 2 L6 8 H9.5 C10.5 12, 8.5 15, 10 18.5 H13 C12.5 15, 13.5 12, 14.5 8 H18 Z\" fill=\"#10b981\" style=\"filter: drop-shadow(0 0 5px rgba(16, 185, 129, 0.8));\" />\n        </svg>\n      </div>\n      <h2 class=\"sidebar-title\">Boost Tool's v6</h2>\n    </div>\n\n    <div class=\"sidebar-info\">\n      <div style=\"font-size: 11px; color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;\">\n        <span style=\"width: 4px; height: 16px; background: var(--primary); border-radius: 2px;\"></span>\n        Campaign Settings\n      </div>\n      <div class=\"sidebar-info-item\" style=\"margin-bottom: 16px;\">\n        <div class=\"side-label-row\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"></path></svg>\n          Select Goal\n        </div>\n        <select id=\"side_goal\" style=\"padding: 8px 12px; font-weight: 600;\">\n          <option value=\"LINK_CLICKS\" selected>Get More Link Click</option>\n          <option value=\"MESSAGES\">Get More Message</option>\n          <option value=\"PAGE_LIKES\">Get More Followers</option>\n          <option value=\"POST_ENGAGEMENT\">Get More Engagement</option>\n          <option value=\"VIDEO_VIEWS\">Get More Page visits</option>\n        </select>\n      </div>\n\n      <div class=\"sidebar-info-item\" style=\"margin-bottom: 0;\">\n        <div class=\"side-label-row\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"></line><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"></line></svg>\n          Select Currency\n        </div>\n        <div class=\"multi-select-container\" id=\"currencyDropdownContainer\">\n          <div class=\"multi-select-trigger\" id=\"currencyTrigger\" style=\"padding: 8px 12px; font-size: 11px; font-weight: 800;\">\n            <span class=\"multi-select-trigger-text\" id=\"currencyTriggerText\">Select Currency</span>\n            <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"margin-left: 8px;\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>\n          </div>\n          <div class=\"multi-select-dropdown\" id=\"currencyDropdown\" style=\"font-size: 11px; top: calc(100% + 6px); bottom: auto;\">\n            <div class=\"multi-select-search-wrapper\" style=\"padding: 6px 10px;\">\n              <input type=\"text\" class=\"multi-select-search\" id=\"currencySearch\" placeholder=\"Search currency...\" style=\"padding: 6px 10px; font-size: 11px;\">\n            </div>\n            <div class=\"multi-select-options\" id=\"currencyOptions\" style=\"max-height: 180px;\">\n              <!-- Options populated by JS -->\n            </div>\n          </div>\n        </div>\n        <select id=\"simple_currency\" style=\"display: none;\">\n          <option value=\"USD\" selected>USD - US Dollar</option>\n          <option value=\"EUR\">EUR - Euro</option>\n          <option value=\"BRL\">BRL - Brazilian Real</option>\n          <option value=\"SAR\">SAR - Saudi Riyal</option>\n          <option value=\"BDT\">BDT - Bangladeshi Taka</option>\n          <option value=\"INR\">INR - Indian Rupee</option>\n          <option value=\"PKR\">PKR - Pakistani Rupee</option>\n          <option value=\"CAD\">CAD - Canadian Dollar</option>\n          <option value=\"AED\">AED - UAE Dirham</option>\n          <option value=\"DZD\">DZD - Algerian Dinar</option>\n          <option value=\"ARS\">ARS - Argentine Peso</option>\n          <option value=\"AUD\">AUD - Australian Dollar</option>\n          <option value=\"BHD\">BHD - Bahraini Dinar</option>\n          <option value=\"BOB\">BOB - Bolivian Boliviano</option>\n          <option value=\"GBP\">GBP - British Pound Sterling</option>\n          <option value=\"CLP\">CLP - Chilean Peso</option>\n          <option value=\"CNY\">CNY - Chinese Yuan</option>\n          <option value=\"COP\">COP - Colombian Peso</option>\n          <option value=\"CRC\">CRC - Costa Rican Colón</option>\n          <option value=\"CZK\">CZK - Czech Koruna</option>\n          <option value=\"DKK\">DKK - Danish Krone</option>\n          <option value=\"EGP\">EGP - Egyptian Pound</option>\n          <option value=\"GTQ\">GTQ - Guatemalan Quetzal</option>\n          <option value=\"HNL\">HNL - Honduran Lempira</option>\n          <option value=\"HKD\">HKD - Hong Kong Dollar</option>\n          <option value=\"HUF\">HUF - Hungarian Forint</option>\n          <option value=\"IDR\">IDR - Indonesian Rupiah</option>\n          <option value=\"ILS\">ILS - Israeli New Shekel</option>\n          <option value=\"JPY\">JPY - Japanese Yen</option>\n          <option value=\"JOD\">JOD - Jordanian Dinar</option>\n          <option value=\"KES\">KES - Kenyan Shilling</option>\n          <option value=\"KWD\">KWD - Kuwaiti Dinar</option>\n          <option value=\"LBP\">LBP - Lebanese Pound</option>\n          <option value=\"MOP\">MOP - Macanese Pataca</option>\n          <option value=\"MYR\">MYR - Malaysian Ringgit</option>\n          <option value=\"MXN\">MXN - Mexican Peso</option>\n          <option value=\"MAD\">MAD - Moroccan Dirham</option>\n          <option value=\"TWD\">TWD - New Taiwan Dollar</option>\n          <option value=\"NZD\">NZD - New Zealand Dollar</option>\n          <option value=\"NIO\">NIO - Nicaraguan Córdoba</option>\n          <option value=\"NGN\">NGN - Nigerian Naira</option>\n          <option value=\"NOK\">NOK - Norwegian Krone</option>\n          <option value=\"OMR\">OMR - Omani Rial</option>\n          <option value=\"PYG\">PYG - Paraguayan Guaraní</option>\n          <option value=\"PEN\">PEN - Peruvian Sol</option>\n          <option value=\"PHP\">PHP - Philippine Peso</option>\n          <option value=\"PLN\">PLN - Polish Złoty</option>\n          <option value=\"QAR\">QAR - Qatari Riyal</option>\n          <option value=\"RON\">RON - Romanian Leu</option>\n          <option value=\"SGD\">SGD - Singapore Dollar</option>\n          <option value=\"ZAR\">ZAR - South African Rand</option>\n          <option value=\"KRW\">KRW - South Korean Won</option>\n          <option value=\"SEK\">SEK - Swedish Krona</option>\n          <option value=\"CHF\">CHF - Swiss Franc</option>\n          <option value=\"THB\">THB - Thai Baht</option>\n          <option value=\"TRY\">TRY - Turkish Lira</option>\n          <option value=\"UAH\">UAH - Ukrainian Hryvnia</option>\n          <option value=\"UYU\">UYU - Uruguayan Peso</option>\n          <option value=\"VND\">VND - Vietnamese Dong</option>\n        </select>\n      </div>\n    </div>\n\n    <div class=\"sidebar-info\" style=\"margin-top: 20px;\">\n      <div style=\"font-size: 11px; color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px; display: flex; align-items: center; gap: 8px;\">\n        <span style=\"width: 4px; height: 16px; background: var(--primary); border-radius: 2px;\"></span>\n        System Targeting\n      </div>\n      \n      <div class=\"sidebar-info-item\">\n        <div class=\"side-label-row\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline></svg>\n          Age Optimization\n        </div>\n        <div class=\"side-control-row\">\n          <input type=\"number\" id=\"side_age_min\" value=\"23\" min=\"13\" max=\"65\">\n          <span style=\"color: var(--primary); font-weight: 900; font-size: 16px; text-shadow: 0 0 10px var(--primary-glow);\"> - </span>\n          <input type=\"number\" id=\"side_age_max\" value=\"55\" min=\"13\" max=\"65\">\n        </div>\n      </div>\n\n      <div class=\"sidebar-info-item\">\n        <div class=\"side-label-row\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle></svg>\n          Gender Target\n        </div>\n        <select id=\"side_gender\" style=\"padding: 8px 12px; font-weight: 600;\">\n          <option value=\"0\">All Audiences</option>\n          <option value=\"1\" selected>Men Only</option>\n          <option value=\"2\">Women Only</option>\n        </select>\n      </div>\n    </div>\n\n    <div class=\"sidebar-footer\">\n      <div style=\"display: flex; flex-direction: column; gap: 8px;\">\n        <a href=\"https://t.me/mrrajuali\" target=\"_blank\" class=\"sidebar-btn\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z\"/></svg>\n          Developer Contact\n        </a>\n        <a href=\"https://t.me/mrrajuali\" target=\"_blank\" class=\"sidebar-btn\" style=\"border-color: rgba(16, 185, 129, 0.2);\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"></path></svg>\n          Join TG Community\n        </a>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"simple-main\">\n    <div class=\"simple-header\">\n      <h3>Campaign Configuration</h3>\n      <button class=\"simple-close\" id=\"simpleClose\">\n        <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"></line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"></line></svg>\n      </button>\n    </div>\n\n    <div class=\"simple-content\">\n      <div class=\"fast-post-tool\">\n        <h4>\n          <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 19l7-7 3 3-7 7-3-3z\"></path><path d=\"M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z\"></path><path d=\"M2 2l7.586 7.586\"></path><circle cx=\"11\" cy=\"11\" r=\"2\"></circle></svg>\n          Direct Post & Auto-Fill Tool\n        </h4>\n        <div style=\"display: flex; flex-direction: column; gap: 10px;\">\n          <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: -2px;\">\n            <div class=\"simple-label\" style=\"margin-bottom: 0; display: flex; align-items: center; gap: 6px;\">\n              <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20h9\"></path><path d=\"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z\"></path></svg>\n              Post Caption / Description\n            </div>\n            <button id=\"randomDescBtn\" type=\"button\" style=\"background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary); color: var(--primary); font-size: 9px; font-weight: 800; padding: 2px 8px; border-radius: 4px; cursor: pointer; text-transform: uppercase;\">🎲 Random Description</button>\n          </div>\n          <textarea class=\"simple-input\" id=\"post_caption\" placeholder=\"Write a caption... (Optional)\" style=\"min-height: 52px; height: 52px; font-size: 13px; padding: 12px 15px; resize: none; border-radius: 14px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); line-height: 1.4;\"></textarea>\n          \n          <div id=\"post_preview_container\" style=\"margin-bottom: 2px; display: none;\">\n            <img id=\"post_preview_img\" src=\"\" style=\"display: none; width: 100%;\">\n            <video id=\"post_preview_video\" controls style=\"display: none; width: 100%; max-height: 450px;\"></video>\n          </div>\n          \n          <div style=\"display: grid; grid-template-columns: 1fr 1.2fr; gap: 8px;\">\n            <div class=\"file-input-wrapper\">\n              <div class=\"file-input-btn\" id=\"file_btn_text\" style=\"height: 38px; font-size: 10.5px; padding: 0 10px;\">\n                <svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><circle cx=\"8.5\" cy=\"8.5\" r=\"1.5\"></circle><polyline points=\"21 15 16 10 5 21\"></polyline></svg>\n                Select Photo/Video\n              </div>\n              <input type=\"file\" id=\"post_image\" accept=\"image/*,video/*\">\n            </div>\n\n            <button class=\"post-action-btn\" id=\"fastPostBtn\" style=\"height: 38px; margin-top: 0; font-size: 11px; padding: 0 10px;\">\n              <span class=\"post-spinner spinner\" style=\"display:none; width: 12px; height: 12px;\"></span>\n              <svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path><polyline points=\"17 8 12 3 7 8\"></polyline><line x1=\"12\" y1=\"3\" x2=\"12\" y2=\"15\"></line></svg>\n              Upload Post\n            </button>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"simple-group\" style=\"grid-column: span 2;\">\n        <div style=\"display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;\">\n          <div class=\"simple-label\">\n            <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"9\" y1=\"3\" x2=\"9\" y2=\"21\"></line></svg>\n            Facebook Page ID\n          </div>\n          <button id=\"autoDetectBtn\" style=\"background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary); color: var(--primary); font-size: 9px; font-weight: 800; padding: 2px 8px; border-radius: 4px; cursor: pointer; text-transform: uppercase;\">Auto-Detect IDs</button>\n        </div>\n        <input class=\"simple-input\" id=\"simple_page_id\" placeholder=\"Auto-detected or enter manually\">\n      </div>\n\n      <div class=\"simple-group\">\n        <div class=\"simple-label\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\"></path><circle cx=\"12\" cy=\"7\" r=\"4\"></circle></svg>\n          Ad Account ID\n        </div>\n        <input class=\"simple-input\" id=\"simple_ad_account_id\" placeholder=\"Enter Ad Account ID (e.g. 2203579673514143)\">\n      </div>\n\n      <div class=\"simple-group\">\n        <div class=\"simple-label\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"></path><polyline points=\"14 2 14 8 20 8\"></polyline><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"></line><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"></line><polyline points=\"10 9 9 9 8 9\"></polyline></svg>\n          Target Post ID\n        </div>\n        <input class=\"simple-input\" id=\"simple_post_id\" placeholder=\"Enter post ID\">\n      </div>\n\n      <div class=\"simple-group\" id=\"simple_link_container\" style=\"grid-column: span 2;\">\n        <div class=\"simple-label\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"></path><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"></path></svg>\n          Destination Website URL\n        </div>\n        <input class=\"simple-input\" id=\"simple_link\" placeholder=\"https://your-website.com\" type=\"url\">\n      </div>\n\n      <div class=\"simple-group\" style=\"grid-column: span 2;\">\n        <div class=\"simple-label\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"2\" y1=\"12\" x2=\"22\" y2=\"12\"></line><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"></path></svg>\n          Target Countries (Multi-Select)\n        </div>\n        <div class=\"multi-select-container\" id=\"multiCountryContainer\">\n          <div class=\"multi-select-trigger\" id=\"multiCountryTrigger\">\n            <span class=\"multi-select-trigger-text\" id=\"multiCountryTriggerText\">Select Countries</span>\n            <svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"margin-left: 8px;\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>\n          </div>\n          <div class=\"multi-select-dropdown\" id=\"multiCountryDropdown\">\n            <div class=\"multi-select-search-wrapper\">\n              <input type=\"text\" class=\"multi-select-search\" id=\"multiCountrySearch\" placeholder=\"Search countries...\">\n              <button type=\"button\" class=\"multi-select-clear-btn\" id=\"multiCountryClear\">Clear</button>\n            </div>\n            <div class=\"multi-select-options\" id=\"multiCountryOptions\">\n              <!-- Options will be populated dynamically by JS -->\n            </div>\n          </div>\n        </div>\n        <div class=\"multi-select-tags-container\" id=\"multiCountryTags\"></div>\n      </div>\n\n\n\n      <div class=\"simple-group\">\n        <div class=\"simple-label\" id=\"budget_label\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"5\" width=\"20\" height=\"14\" rx=\"2\"></rect><line x1=\"2\" y1=\"10\" x2=\"22\" y2=\"10\"></line></svg>\n          Daily Budget\n        </div>\n        <div style=\"position: relative;\">\n          <span id=\"budget_symbol\" style=\"position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-weight: 700; color: var(--primary); font-size: 15px; pointer-events: none;\">$</span>\n          <input type=\"number\" class=\"simple-input\" id=\"simple_budget\" value=\"2\" min=\"1\" step=\"1\" style=\"padding-left: 35px;\">\n        </div>\n      </div>\n\n      <div class=\"simple-group\">\n        <div class=\"simple-label\">\n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><polyline points=\"12 6 12 12 16 14\"></polyline></svg>\n          Duration (Days)\n        </div>\n        <input type=\"number\" class=\"simple-input\" id=\"simple_duration\" value=\"7\" min=\"1\" max=\"365\">\n      </div>\n\n      <div id=\"simpleStatus\" class=\"simple-status\" style=\"grid-column: span 2;\"></div>\n    </div>\n\n    <div class=\"simple-footer\">\n      <button class=\"simple-btn\" id=\"simpleBoostBtn\">\n        <span class=\"spinner\" style=\"display:none\"></span>Launch Boost Campaign\n      </button>\n    </div>\n  </div>\n</div>\n";
+  document.body.appendChild(_0x37c559);
+  function _0x1f61f(_0x493ea0, _0x2f912a, _0x4b0ae5 = false) {
+    const _0xcda576 = document.getElementById("simpleStatus");
+    _0xcda576.className = "simple-status " + _0x493ea0;
+    _0xcda576.innerHTML = _0x2f912a;
+    _0xcda576.style.display = "block";
+    if (!_0x4b0ae5) {
+      const _0x31be68 = document.querySelector(".simple-content");
+      _0x31be68.scrollTop = _0x31be68.scrollHeight;
+    }
+  }
+  function _0x121e29() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, _0x2b5812 => {
+      const _0x4adc4b = Math.random() * 16 | 0;
+      const _0x58e5da = _0x2b5812 === "x" ? _0x4adc4b : _0x4adc4b & 3 | 8;
+      return _0x58e5da.toString(16);
+    });
+  }
+  async function _0x4924cb() {
+    if (!_0x4bcd6f()) {
+      return;
+    }
+    const _0x218984 = document.getElementById("simple_page_id").value.trim();
+    let _0x13b023 = document.getElementById("simple_ad_account_id").value.trim();
+    const _0x54effe = document.getElementById("simple_post_id").value.trim();
+    const _0x1a1897 = document.getElementById("simple_link").value.trim();
+    const _0x2dc1f3 = parseFloat(document.getElementById("simple_budget").value) || 2;
+    const _0x416fe0 = Math.floor(_0x2dc1f3 * 100);
+    const _0x35954a = parseInt(document.getElementById("simple_duration").value) || 7;
+    const _0x113795 = document.getElementById("simple_currency").value || "USD";
+    const _0x4685c1 = document.getElementById("side_goal").value || "LINK_CLICKS";
+    if (!_0x218984 || !_0x13b023 || !_0x54effe || _0x4685c1 === "LINK_CLICKS" && !_0x1a1897) {
+      _0x1f61f("error", "⚠️ All fields are required!");
+      return;
+    }
+    _0x13b023 = _0x13b023.replace(/\D/g, "");
+    if (_0x447206.length === 0) {
+      _0x1f61f("error", "⚠️ Please select at least one target country!");
+      return;
+    }
+    const _0x2e4c80 = _0xfbdf3.find(_0x493f01 => _0x493f01.value === _0x447206[0]);
+    const _0x46e637 = _0x447206.length > 1 ? (_0x2e4c80 ? _0x2e4c80.text : _0x447206[0]) + (" + " + (_0x447206.length - 1) + " more") : _0x2e4c80 ? _0x2e4c80.text : "Unknown";
+    const _0x1a2037 = parseInt(document.getElementById("side_gender").value) || 0;
+    const _0x51ab40 = parseInt(document.getElementById("side_age_min").value) || 18;
+    const _0x5297be = parseInt(document.getElementById("side_age_max").value) || 55;
+    const _0x1a04b3 = ["FACEBOOK"];
+    const _0x1e14fa = {
+      location_types: ["home", "recent"],
+      countries: []
+    };
+    _0x447206.forEach(_0x340e66 => {
+      if (_0x340e66 === "AFRICA_REGION") {
+        const _0x1696e6 = ["NG", "GH", "KE", "ZA", "CI", "MZ", "ZM", "EG", "MA", "DZ", "TN", "CM", "SN", "ET", "TZ", "UG", "RW", "AO", "BJ", "BF", "BW", "CD", "CG", "GA", "GN"];
+        _0x1696e6.forEach(_0x1f5d5a => {
+          if (!_0x1e14fa.countries.includes(_0x1f5d5a)) {
+            _0x1e14fa.countries.push(_0x1f5d5a);
+          }
+        });
+      } else if (_0x340e66 === "COMB_BOOST") {
+        const _0x500f20 = ["PH", "NG", "GH", "KE", "ZA", "CI", "MZ", "ZM", "EG", "MA", "DZ", "TN", "CM", "SN", "ET", "TZ", "UG", "RW", "AO", "BJ", "BF", "BW", "CD", "CG", "GA", "GN"];
+        _0x500f20.forEach(_0x322ad8 => {
+          if (!_0x1e14fa.countries.includes(_0x322ad8)) {
+            _0x1e14fa.countries.push(_0x322ad8);
+          }
+        });
+      } else if (!_0x1e14fa.countries.includes(_0x340e66)) {
+        _0x1e14fa.countries.push(_0x340e66);
+      }
+    });
+    const _0x710b5f = {
+      genders: [_0x1a2037],
+      age_min: _0x51ab40,
+      age_max: _0x5297be,
+      geo_locations: _0x1e14fa
+    };
+    const _0x197394 = _0x710b5f;
+    const _0x545705 = {
+      ..._0x197394
+    };
+    const _0x1cd8ad = _0x545705;
+    const _0x464331 = document.getElementById("simpleBoostBtn");
+    const _0x519327 = _0x464331.querySelector(".spinner");
+    _0x464331.disabled = true;
+    _0x519327.style.display = "inline-block";
+    try {
+      _0x1f61f("info", "🚀 Initiating campaign deployment...");
+      const _0x304175 = {
+        publisher_platforms: _0x1a04b3
+      };
+      const _0x1b4c26 = {
+        link: _0x1a1897
+      };
+      const _0x17a747 = {
+        ads_lwi_goal: _0x4685c1 === "MESSAGES" ? "GET_MULTI_MESSAGES" : _0x4685c1,
+        objective: _0x4685c1,
+        budget: _0x416fe0,
+        budget_type: "DAILY_BUDGET",
+        currency: _0x113795,
+        duration_in_days: _0x35954a,
+        run_continuously: false,
+        is_automatic_goal: false,
+        legacy_ad_account_id: _0x13b023,
+        legacy_entry_point: "www_profile_plus_timeline_caa_cae_voice",
+        placement_spec: _0x304175,
+        audience: {
+          targeting_spec: _0x197394,
+          audience_option: "CUSTOM",
+          saved_audience_id: null
+        },
+        ad_target_spec: {
+          client_can_edit: true
+        },
+        targeting_spec_string: JSON.stringify(_0x1cd8ad),
+        adgroup_specs: [{
+          creative: {
+            call_to_action: _0x4685c1 === "MESSAGES" ? {
+              type: "MESSAGE_PAGE",
+              value: {
+                app_destination: "MESSENGER",
+                link: "https://fb.com/messenger_doc/"
+              }
+            } : _0x4685c1 === "PAGE_LIKES" ? {
+              type: "LIKE_PAGE",
+              value: {}
+            } : _0x4685c1 === "POST_ENGAGEMENT" || _0x4685c1 === "VIDEO_VIEWS" ? {
+              type: "NO_BUTTON",
+              value: {}
+            } : {
+              type: "LEARN_MORE",
+              value: _0x1b4c26
+            },
+            object_story_id: _0x218984 + "_" + _0x54effe
+          }
+        }],
+        cta_data: _0x4685c1 === "MESSAGES" ? {
+          is_cta_share_post: false,
+          link: "https://fb.com/messenger_doc/",
+          type: "MESSAGE_PAGE"
+        } : null
+      };
+      const _0x45c18b = ["9955578997835249", "8916092638475205", "7890123456789012", "3456789012345678"];
+      let _0x4c7017 = null;
+      let _0x51baa5 = null;
+      for (const _0x2fb3ca of _0x45c18b) {
+        try {
+          const _0x1ea91a = {
+            id: _0x218984
+          };
+          const _0x164d79 = {
+            input: {
+              boost_id: null,
+              creation_spec: _0x17a747,
+              flow_id: _0x121e29(),
+              lwi_asset_id: _0x1ea91a,
+              manual_review_requested: false,
+              page_id: _0x218984,
+              product: "BOOSTED_POST",
+              target_id: _0x54effe,
+              actor_id: _0x59de9d(),
+              client_mutation_id: String(Math.floor(Math.random() * 100000))
+            }
+          };
+          _0x4c7017 = await _0x1971f7(_0x2fb3ca, _0x164d79, "LWICometCreateBoostedComponentMutation");
+          if (_0x4c7017 && (_0x4c7017.data || _0x4c7017.errors)) {
+            break;
+          }
+        } catch (_0x5300f0) {
+          _0x51baa5 = _0x5300f0;
+          continue;
+        }
+      }
+      if (!_0x4c7017) {
+        throw new Error("Connection failed. Please refresh.");
+      }
+      if (_0x4c7017.errors) {
+        const _0x3d021d = _0x4c7017?.data?.create_boosted_component?.id;
+        if (_0x3d021d) {
+          _0x2fe50d(_0x3d021d, _0x46e637, _0x113795);
+          return;
+        }
+        throw new Error(_0x4c7017.errors[0].message);
+      }
+      const _0x20a601 = _0x4c7017?.data?.create_boosted_component?.id;
+      if (!_0x20a601) {
+        throw new Error("Deployment successful but ID missing.");
+      }
+      _0x2fe50d(_0x20a601, _0x46e637, _0x113795);
+    } catch (_0x4beb2c) {
+      _0x1f61f("error", "❌ Deployment failed: " + _0x4beb2c.message);
+    } finally {
+      _0x464331.disabled = false;
+      _0x519327.style.display = "none";
+    }
+  }
+  function _0x2fe50d(_0xb50e7b, _0x3de163, _0x142f1c) {
+    _0x1f61f("success", "<div style=\"display: flex; flex-direction: column; gap: 20px; padding: 10px 0;\">\n            <div style=\"font-size: 20px; font-weight: 800; color: var(--success); display: flex; align-items: center; gap: 10px;\">\n                <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"></polyline></svg>\n                Campaign Create Successfully\n            </div>\n            \n            <div style=\"background: rgba(255,255,255,0.03); border: 1px solid rgba(16, 185, 129, 0.3); padding: 24px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); text-align: left;\">\n                <div style=\"margin-bottom: 20px;\">\n                    <div style=\"font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;\">Reference ID</div>\n                    <div style=\"font-size: 14px; font-weight: 700; color: #fff; font-family: monospace; background: rgba(0,0,0,0.3); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); word-break: break-all;\">" + _0xb50e7b + "</div>\n                </div>\n\n                <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 15px;\">\n                    <div style=\"background: rgba(255,255,255,0.02); padding: 15px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);\">\n                        <div style=\"font-size: 10px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;\">Region</div>\n                        <div style=\"font-size: 14px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px;\">\n                          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg>\n                          " + _0x3de163 + "\n                        </div>\n                    </div>\n                    <div style=\"background: rgba(255,255,255,0.02); padding: 15px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.05);\">\n                        <div style=\"font-size: 10px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;\">Currency</div>\n                        <div style=\"font-size: 14px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px;\">\n                          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"></line><line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"></line></svg>\n                          " + _0x142f1c + " Active\n                        </div>\n                    </div>\n                </div>\n                \n                <div style=\"margin-top: 20px; display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: var(--success); background: rgba(16, 185, 129, 0.05); padding: 12px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.1);\">\n                    <div class=\"live-indicator\"></div>\n                    Targeting System: Online & Scaling\n                </div>\n            </div>\n        </div>\n        <style>\n            .live-indicator { width: 8px; height: 8px; background: var(--success); border-radius: 50%; box-shadow: 0 0 12px var(--success); animation: pulse-live 1.5s infinite; }\n            @keyframes pulse-live { 0% { transform: scale(0.9); opacity: 0.6; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.6; } }\n        </style>");
+  }
+  const _0x4151ee = {
+    MZ: "MZN",
+    NG: "NGN",
+    GH: "GHS",
+    KE: "KES",
+    CI: "XOF",
+    ID: "IDR",
+    PH: "PHP",
+    TH: "THB",
+    BD: "BDT",
+    IN: "INR",
+    PK: "PKR",
+    AU: "AUD",
+    ZA: "ZAR",
+    FR: "EUR",
+    ZM: "ZMW",
+    US: "USD",
+    GB: "GBP",
+    CA: "CAD",
+    AE: "AED",
+    SA: "SAR",
+    MY: "MYR",
+    SG: "SGD",
+    LK: "LKR",
+    BR: "BRL",
+    MX: "MXN",
+    NZ: "NZD",
+    DE: "EUR",
+    AFRICA_REGION: "USD"
+  };
+  const _0x54fcf6 = {
+    USD: "$",
+    EUR: "€",
+    GBP: "£",
+    BDT: "৳",
+    INR: "₹",
+    THB: "��",
+    SGD: "S$",
+    SAR: "﷼",
+    LKR: "රු",
+    AED: "د.إ",
+    AUD: "A$",
+    BRL: "R$",
+    CAD: "C$",
+    MXN: "$",
+    NZD: "$",
+    PKR: "₨",
+    PHP: "₱",
+    IDR: "Rp",
+    HKD: "HK$",
+    MYR: "RM",
+    ZAR: "R",
+    NGN: "₦",
+    GHS: "GH₵",
+    KES: "KSh",
+    XOF: "CFA",
+    MZN: "MT",
+    DZD: "DA",
+    ARS: "$",
+    BHD: "BD",
+    BOB: "Bs",
+    CLP: "$",
+    CNY: "¥",
+    COP: "$",
+    CRC: "₡",
+    CZK: "Kč",
+    DKK: "kr",
+    EGP: "EGP",
+    GTQ: "Q",
+    HNL: "L",
+    HUF: "Ft",
+    ILS: "₪",
+    JPY: "¥",
+    JOD: "JD",
+    KWD: "KD",
+    LBP: "ل.ل",
+    MOP: "MOP$",
+    MAD: "DH",
+    TWD: "NT$",
+    NIO: "C$",
+    NOK: "kr",
+    OMR: "RO",
+    PYG: "₲",
+    PEN: "S/.",
+    PLN: "zł",
+    QAR: "QR",
+    RON: "lei",
+    KRW: "₩",
+    SEK: "kr",
+    CHF: "CHF",
+    TRY: "₺",
+    UAH: "₴",
+    UYU: "$U",
+    VND: "₫"
+  };
+  const _0x4ea7c7 = {
+    USD: 1,
+    EUR: 0.92,
+    GBP: 0.79,
+    BDT: 110,
+    INR: 83.5,
+    THB: 36.5,
+    SGD: 1.35,
+    SAR: 3.75,
+    LKR: 300,
+    AED: 3.67,
+    AUD: 1.52,
+    BRL: 5.15,
+    CAD: 1.37,
+    MXN: 16.8,
+    NZD: 1.66,
+    PKR: 278,
+    PHP: 57.5,
+    IDR: 16000,
+    HKD: 7.82,
+    MYR: 4.74,
+    ZAR: 18.5,
+    NGN: 1400,
+    GHS: 14.2,
+    KES: 132,
+    XOF: 605,
+    MZN: 63.8,
+    ZMW: 26.5,
+    EGP: 47.5,
+    DZD: 134,
+    ARS: 900,
+    BHD: 0.38,
+    BOB: 6.9,
+    CLP: 920,
+    CNY: 7.2,
+    COP: 3850,
+    CRC: 510,
+    CZK: 23,
+    DKK: 6.9,
+    GTQ: 7.8,
+    HNL: 24.7,
+    HUF: 360,
+    ILS: 3.7,
+    JPY: 156,
+    JOD: 0.71,
+    KWD: 0.31,
+    LBP: 89500,
+    MOP: 8,
+    MAD: 10,
+    TWD: 32.3,
+    NIO: 36.8,
+    NOK: 10.6,
+    OMR: 0.38,
+    PYG: 7500,
+    PEN: 3.7,
+    PLN: 3.9,
+    QAR: 3.64,
+    RON: 4.6,
+    KRW: 1370,
+    SEK: 10.5,
+    CHF: 0.9,
+    TRY: 32.2,
+    UAH: 40.5,
+    UYU: 38.5,
+    VND: 25400
+  };
+  let _0x1d278b = "USD";
+  function _0x4bcd6f() {
+    const _0x160296 = document.getElementById("simple_budget");
+    const _0x53e6d5 = document.getElementById("simple_currency").value;
+    const _0x4f6699 = parseFloat(_0x160296.value);
+    const _0x4a88bc = document.getElementById("simpleStatus");
+    const _0x257988 = _0x4ea7c7[_0x53e6d5] || 1;
+    if (_0x160296.value === "") {
+      _0x1f61f("error", "⚠️ Please enter a budget amount. The boost can be increased a little more.");
+      return false;
+    }
+    if (_0x4f6699 < _0x257988) {
+      _0x1f61f("error", "⚠️ Boost is not possible at this amount. The boost can be increased a little more (Minimum: " + Math.ceil(_0x257988) + " " + _0x53e6d5 + ").");
+      _0x160296.style.borderColor = "#ef4444";
+      return false;
+    }
+    _0x160296.style.borderColor = "";
+    if (_0x4a88bc.classList.contains("error") && (_0x4a88bc.innerText.includes("not possible") || _0x4a88bc.innerText.includes("enter a budget"))) {
+      _0x4a88bc.style.display = "none";
+    }
+    return true;
+  }
+  function _0x63dbcb() {
+    const _0x4c0388 = document.getElementById("simple_currency");
+    const _0x23d2f6 = _0x4c0388.value;
+    const _0x27915a = document.getElementById("currencyTriggerText");
+    if (_0x27915a) {
+      const _0x571a5c = [{
+        value: "USD",
+        text: "USD - US Dollar"
+      }, {
+        value: "EUR",
+        text: "EUR - Euro"
+      }, {
+        value: "BRL",
+        text: "BRL - Brazilian Real"
+      }, {
+        value: "SAR",
+        text: "SAR - Saudi Riyal"
+      }, {
+        value: "BDT",
+        text: "BDT - Bangladeshi Taka"
+      }, {
+        value: "INR",
+        text: "INR - Indian Rupee"
+      }, {
+        value: "PKR",
+        text: "PKR - Pakistani Rupee"
+      }, {
+        value: "CAD",
+        text: "CAD - Canadian Dollar"
+      }, {
+        value: "AED",
+        text: "AED - UAE Dirham"
+      }, {
+        value: "DZD",
+        text: "DZD - Algerian Dinar"
+      }, {
+        value: "ARS",
+        text: "ARS - Argentine Peso"
+      }, {
+        value: "AUD",
+        text: "AUD - Australian Dollar"
+      }, {
+        value: "BHD",
+        text: "BHD - Bahraini Dinar"
+      }, {
+        value: "BOB",
+        text: "BOB - Bolivian Boliviano"
+      }, {
+        value: "GBP",
+        text: "GBP - British Pound Sterling"
+      }, {
+        value: "CLP",
+        text: "CLP - Chilean Peso"
+      }, {
+        value: "CNY",
+        text: "CNY - Chinese Yuan"
+      }, {
+        value: "COP",
+        text: "COP - Colombian Peso"
+      }, {
+        value: "CRC",
+        text: "CRC - Costa Rican Colón"
+      }, {
+        value: "CZK",
+        text: "CZK - Czech Koruna"
+      }, {
+        value: "DKK",
+        text: "DKK - Danish Krone"
+      }, {
+        value: "EGP",
+        text: "EGP - Egyptian Pound"
+      }, {
+        value: "GTQ",
+        text: "GTQ - Guatemalan Quetzal"
+      }, {
+        value: "HNL",
+        text: "HNL - Honduran Lempira"
+      }, {
+        value: "HKD",
+        text: "HKD - Hong Kong Dollar"
+      }, {
+        value: "HUF",
+        text: "HUF - Hungarian Forint"
+      }, {
+        value: "IDR",
+        text: "IDR - Indonesian Rupiah"
+      }, {
+        value: "ILS",
+        text: "ILS - Israeli New Shekel"
+      }, {
+        value: "JPY",
+        text: "JPY - Japanese Yen"
+      }, {
+        value: "JOD",
+        text: "JOD - Jordanian Dinar"
+      }, {
+        value: "KES",
+        text: "KES - Kenyan Shilling"
+      }, {
+        value: "KWD",
+        text: "KWD - Kuwaiti Dinar"
+      }, {
+        value: "LBP",
+        text: "LBP - Lebanese Pound"
+      }, {
+        value: "MOP",
+        text: "MOP - Macanese Pataca"
+      }, {
+        value: "MYR",
+        text: "MYR - Malaysian Ringgit"
+      }, {
+        value: "MXN",
+        text: "MXN - Mexican Peso"
+      }, {
+        value: "MAD",
+        text: "MAD - Moroccan Dirham"
+      }, {
+        value: "TWD",
+        text: "TWD - New Taiwan Dollar"
+      }, {
+        value: "NZD",
+        text: "NZD - New Zealand Dollar"
+      }, {
+        value: "NIO",
+        text: "NIO - Nicaraguan Córdoba"
+      }, {
+        value: "NGN",
+        text: "NGN - Nigerian Naira"
+      }, {
+        value: "NOK",
+        text: "NOK - Norwegian Krone"
+      }, {
+        value: "OMR",
+        text: "OMR - Omani Rial"
+      }, {
+        value: "PYG",
+        text: "PYG - Paraguayan Guaraní"
+      }, {
+        value: "PEN",
+        text: "PEN - Peruvian Sol"
+      }, {
+        value: "PHP",
+        text: "PHP - Philippine Peso"
+      }, {
+        value: "PLN",
+        text: "PLN - Polish Złoty"
+      }, {
+        value: "QAR",
+        text: "QAR - Qatari Riyal"
+      }, {
+        value: "RON",
+        text: "RON - Romanian Leu"
+      }, {
+        value: "SGD",
+        text: "SGD - Singapore Dollar"
+      }, {
+        value: "ZAR",
+        text: "ZAR - South African Rand"
+      }, {
+        value: "KRW",
+        text: "KRW - South Korean Won"
+      }, {
+        value: "SEK",
+        text: "SEK - Swedish Krona"
+      }, {
+        value: "CHF",
+        text: "CHF - Swiss Franc"
+      }, {
+        value: "THB",
+        text: "THB - Thai Baht"
+      }, {
+        value: "TRY",
+        text: "TRY - Turkish Lira"
+      }, {
+        value: "UAH",
+        text: "UAH - Ukrainian Hryvnia"
+      }, {
+        value: "UYU",
+        text: "UYU - Uruguayan Peso"
+      }, {
+        value: "VND",
+        text: "VND - Vietnamese Dong"
+      }];
+      const _0x5728a0 = _0x571a5c.find(_0x18060d => _0x18060d.value === _0x23d2f6);
+      _0x27915a.textContent = _0x5728a0 ? _0x5728a0.text : _0x23d2f6;
+    }
+    const _0x5c324e = _0x54fcf6[_0x23d2f6] || _0x23d2f6;
+    const _0x4c2da7 = document.getElementById("budget_symbol");
+    const _0x313930 = document.getElementById("simple_budget");
+    _0x4c2da7.textContent = _0x5c324e;
+    const _0x4494e5 = parseFloat(_0x313930.value) || 0;
+    if (_0x4494e5 > 0 && _0x1d278b !== _0x23d2f6) {
+      const _0x34a797 = _0x4494e5 / (_0x4ea7c7[_0x1d278b] || 1);
+      const _0x2b1240 = _0x34a797 * (_0x4ea7c7[_0x23d2f6] || 1);
+      _0x313930.value = Math.ceil(_0x2b1240);
+    }
+    _0x1d278b = _0x23d2f6;
+    if (_0x5c324e.length > 2) {
+      _0x313930.style.paddingLeft = "45px";
+    } else if (_0x5c324e.length > 1) {
+      _0x313930.style.paddingLeft = "38px";
+    } else {
+      _0x313930.style.paddingLeft = "30px";
+    }
+    _0x4bcd6f();
+  }
+  document.getElementById("simple_currency").onchange = _0x63dbcb;
+  const _0x1d057a = (_0x42084a, _0x354f19) => {
+    const _0x189740 = document.getElementById(_0x42084a);
+    const _0x56b9f0 = document.getElementById(_0x354f19);
+    if (!_0x189740 || !_0x56b9f0) {
+      return;
+    }
+    _0x189740.addEventListener("input", () => _0x56b9f0.value = _0x189740.value);
+    _0x56b9f0.addEventListener("input", () => _0x189740.value = _0x56b9f0.value);
+  };
+  _0x63dbcb();
+  document.getElementById("simpleClose").onclick = () => _0x37c559.style.display = "none";
+  document.getElementById("simpleBoostBtn").onclick = _0x4924cb;
+  document.getElementById("simple_budget").oninput = _0x4bcd6f;
+  const _0xb0edfc = document.getElementById("side_goal");
+  const _0x49f7f3 = document.getElementById("simple_link_container");
+  if (_0xb0edfc && _0x49f7f3) {
+    const _0x3b4713 = () => {
+      if (_0xb0edfc.value === "LINK_CLICKS") {
+        _0x49f7f3.style.display = "";
+      } else {
+        _0x49f7f3.style.display = "none";
+      }
+    };
+    _0xb0edfc.addEventListener("change", _0x3b4713);
+    _0x3b4713();
+  }
+  const _0xfbdf3 = [{
+    value: "AFRICA_REGION",
+    text: "Africa Region"
+  }, {
+    value: "MZ",
+    text: "Mozambique"
+  }, {
+    value: "NG",
+    text: "Nigeria"
+  }, {
+    value: "PH",
+    text: "Philippines"
+  }, {
+    value: "KE",
+    text: "Kenya"
+  }, {
+    value: "FR",
+    text: "France"
+  }, {
+    value: "CA",
+    text: "Canada"
+  }, {
+    value: "NL",
+    text: "Netherlands"
+  }, {
+    value: "SE",
+    text: "Sweden"
+  }, {
+    value: "AF",
+    text: "Afghanistan"
+  }, {
+    value: "AL",
+    text: "Albania"
+  }, {
+    value: "DZ",
+    text: "Algeria"
+  }, {
+    value: "AD",
+    text: "Andorra"
+  }, {
+    value: "AO",
+    text: "Angola"
+  }, {
+    value: "AG",
+    text: "Antigua and Barbuda"
+  }, {
+    value: "AR",
+    text: "Argentina"
+  }, {
+    value: "AM",
+    text: "Armenia"
+  }, {
+    value: "AU",
+    text: "Australia"
+  }, {
+    value: "AT",
+    text: "Austria"
+  }, {
+    value: "AZ",
+    text: "Azerbaijan"
+  }, {
+    value: "BS",
+    text: "Bahamas"
+  }, {
+    value: "BH",
+    text: "Bahrain"
+  }, {
+    value: "BD",
+    text: "Bangladesh"
+  }, {
+    value: "BB",
+    text: "Barbados"
+  }, {
+    value: "BY",
+    text: "Belarus"
+  }, {
+    value: "BE",
+    text: "Belgium"
+  }, {
+    value: "BZ",
+    text: "Belize"
+  }, {
+    value: "BJ",
+    text: "Benin"
+  }, {
+    value: "BT",
+    text: "Bhutan"
+  }, {
+    value: "BO",
+    text: "Bolivia"
+  }, {
+    value: "BA",
+    text: "Bosnia and Herzegovina"
+  }, {
+    value: "BW",
+    text: "Botswana"
+  }, {
+    value: "BR",
+    text: "Brazil"
+  }, {
+    value: "BN",
+    text: "Brunei"
+  }, {
+    value: "BG",
+    text: "Bulgaria"
+  }, {
+    value: "BF",
+    text: "Burkina Faso"
+  }, {
+    value: "BI",
+    text: "Burundi"
+  }, {
+    value: "KH",
+    text: "Cambodia"
+  }, {
+    value: "CM",
+    text: "Cameroon"
+  }, {
+    value: "CV",
+    text: "Cape Verde"
+  }, {
+    value: "CF",
+    text: "Central African Republic"
+  }, {
+    value: "TD",
+    text: "Chad"
+  }, {
+    value: "CL",
+    text: "Chile"
+  }, {
+    value: "CN",
+    text: "China"
+  }, {
+    value: "CO",
+    text: "Colombia"
+  }, {
+    value: "KM",
+    text: "Comoros"
+  }, {
+    value: "CG",
+    text: "Congo (Republic of the Congo)"
+  }, {
+    value: "CR",
+    text: "Costa Rica"
+  }, {
+    value: "CI",
+    text: "Côte d'Ivoire (Ivory Coast)"
+  }, {
+    value: "HR",
+    text: "Croatia"
+  }, {
+    value: "CU",
+    text: "Cuba"
+  }, {
+    value: "CY",
+    text: "Cyprus"
+  }, {
+    value: "CZ",
+    text: "Czech Republic (Czechia)"
+  }, {
+    value: "CD",
+    text: "Democratic Republic of the Congo"
+  }, {
+    value: "DK",
+    text: "Denmark"
+  }, {
+    value: "DJ",
+    text: "Djibouti"
+  }, {
+    value: "DM",
+    text: "Dominica"
+  }, {
+    value: "DO",
+    text: "Dominican Republic"
+  }, {
+    value: "EC",
+    text: "Ecuador"
+  }, {
+    value: "EG",
+    text: "Egypt"
+  }, {
+    value: "SV",
+    text: "El Salvador"
+  }, {
+    value: "GQ",
+    text: "Equatorial Guinea"
+  }, {
+    value: "ER",
+    text: "Eritrea"
+  }, {
+    value: "EE",
+    text: "Estonia"
+  }, {
+    value: "SZ",
+    text: "Eswatini (Swaziland)"
+  }, {
+    value: "ET",
+    text: "Ethiopia"
+  }, {
+    value: "FJ",
+    text: "Fiji"
+  }, {
+    value: "FI",
+    text: "Finland"
+  }, {
+    value: "GA",
+    text: "Gabon"
+  }, {
+    value: "GM",
+    text: "Gambia"
+  }, {
+    value: "GE",
+    text: "Georgia"
+  }, {
+    value: "DE",
+    text: "Germany"
+  }, {
+    value: "GH",
+    text: "Ghana"
+  }, {
+    value: "GR",
+    text: "Greece"
+  }, {
+    value: "GD",
+    text: "Grenada"
+  }, {
+    value: "GT",
+    text: "Guatemala"
+  }, {
+    value: "GN",
+    text: "Guinea"
+  }, {
+    value: "GW",
+    text: "Guinea-Bissau"
+  }, {
+    value: "GY",
+    text: "Guyana"
+  }, {
+    value: "HT",
+    text: "Haiti"
+  }, {
+    value: "HN",
+    text: "Honduras"
+  }, {
+    value: "HU",
+    text: "Hungary"
+  }, {
+    value: "IS",
+    text: "Iceland"
+  }, {
+    value: "IN",
+    text: "India"
+  }, {
+    value: "ID",
+    text: "Indonesia"
+  }, {
+    value: "IR",
+    text: "Iran"
+  }, {
+    value: "IQ",
+    text: "Iraq"
+  }, {
+    value: "IE",
+    text: "Ireland"
+  }, {
+    value: "IL",
+    text: "Israel"
+  }, {
+    value: "IT",
+    text: "Italy"
+  }, {
+    value: "JM",
+    text: "Jamaica"
+  }, {
+    value: "JP",
+    text: "Japan"
+  }, {
+    value: "JO",
+    text: "Jordan"
+  }, {
+    value: "KZ",
+    text: "Kazakhstan"
+  }, {
+    value: "KI",
+    text: "Kiribati"
+  }, {
+    value: "KW",
+    text: "Kuwait"
+  }, {
+    value: "KG",
+    text: "Kyrgyzstan"
+  }, {
+    value: "LA",
+    text: "Laos"
+  }, {
+    value: "LV",
+    text: "Latvia"
+  }, {
+    value: "LB",
+    text: "Lebanon"
+  }, {
+    value: "LS",
+    text: "Lesotho"
+  }, {
+    value: "LR",
+    text: "Liberia"
+  }, {
+    value: "LY",
+    text: "Libya"
+  }, {
+    value: "LI",
+    text: "Liechtenstein"
+  }, {
+    value: "LT",
+    text: "Lithuania"
+  }, {
+    value: "LU",
+    text: "Luxembourg"
+  }, {
+    value: "MG",
+    text: "Madagascar"
+  }, {
+    value: "MW",
+    text: "Malawi"
+  }, {
+    value: "MY",
+    text: "Malaysia"
+  }, {
+    value: "MV",
+    text: "Maldives"
+  }, {
+    value: "ML",
+    text: "Mali"
+  }, {
+    value: "MT",
+    text: "Malta"
+  }, {
+    value: "MH",
+    text: "Marshall Islands"
+  }, {
+    value: "MR",
+    text: "Mauritania"
+  }, {
+    value: "MU",
+    text: "Mauritius"
+  }, {
+    value: "MX",
+    text: "Mexico"
+  }, {
+    value: "FM",
+    text: "Micronesia"
+  }, {
+    value: "MD",
+    text: "Moldova"
+  }, {
+    value: "MC",
+    text: "Monaco"
+  }, {
+    value: "MN",
+    text: "Mongolia"
+  }, {
+    value: "ME",
+    text: "Montenegro"
+  }, {
+    value: "MA",
+    text: "Morocco"
+  }, {
+    value: "MM",
+    text: "Myanmar"
+  }, {
+    value: "NA",
+    text: "Namibia"
+  }, {
+    value: "NR",
+    text: "Nauru"
+  }, {
+    value: "NP",
+    text: "Nepal"
+  }, {
+    value: "NZ",
+    text: "New Zealand"
+  }, {
+    value: "NI",
+    text: "Nicaragua"
+  }, {
+    value: "NE",
+    text: "Niger"
+  }, {
+    value: "KP",
+    text: "North Korea"
+  }, {
+    value: "MK",
+    text: "North Macedonia"
+  }, {
+    value: "NO",
+    text: "Norway"
+  }, {
+    value: "OM",
+    text: "Oman"
+  }, {
+    value: "PK",
+    text: "Pakistan"
+  }, {
+    value: "PW",
+    text: "Palau"
+  }, {
+    value: "PA",
+    text: "Panama"
+  }, {
+    value: "PG",
+    text: "Papua New Guinea"
+  }, {
+    value: "PY",
+    text: "Paraguay"
+  }, {
+    value: "PE",
+    text: "Peru"
+  }, {
+    value: "PL",
+    text: "Poland"
+  }, {
+    value: "PT",
+    text: "Portugal"
+  }, {
+    value: "QA",
+    text: "Qatar"
+  }, {
+    value: "RO",
+    text: "Romania"
+  }, {
+    value: "RU",
+    text: "Russia"
+  }, {
+    value: "RW",
+    text: "Rwanda"
+  }, {
+    value: "KN",
+    text: "Saint Kitts and Nevis"
+  }, {
+    value: "LC",
+    text: "Saint Lucia"
+  }, {
+    value: "VC",
+    text: "Saint Vincent and the Grenadines"
+  }, {
+    value: "WS",
+    text: "Samoa"
+  }, {
+    value: "SM",
+    text: "San Marino"
+  }, {
+    value: "ST",
+    text: "São Tomé and Príncipe"
+  }, {
+    value: "SA",
+    text: "Saudi Arabia"
+  }, {
+    value: "SN",
+    text: "Senegal"
+  }, {
+    value: "RS",
+    text: "Serbia"
+  }, {
+    value: "SC",
+    text: "Seychelles"
+  }, {
+    value: "SL",
+    text: "Sierra Leone"
+  }, {
+    value: "SG",
+    text: "Singapore"
+  }, {
+    value: "SK",
+    text: "Slovakia"
+  }, {
+    value: "SI",
+    text: "Slovenia"
+  }, {
+    value: "SB",
+    text: "Solomon Islands"
+  }, {
+    value: "SO",
+    text: "Somalia"
+  }, {
+    value: "ZA",
+    text: "South Africa"
+  }, {
+    value: "KR",
+    text: "South Korea"
+  }, {
+    value: "SS",
+    text: "South Sudan"
+  }, {
+    value: "ES",
+    text: "Spain"
+  }, {
+    value: "LK",
+    text: "Sri Lanka"
+  }, {
+    value: "SD",
+    text: "Sudan"
+  }, {
+    value: "SR",
+    text: "Suriname"
+  }, {
+    value: "CH",
+    text: "Switzerland"
+  }, {
+    value: "SY",
+    text: "Syria"
+  }, {
+    value: "TW",
+    text: "Taiwan"
+  }, {
+    value: "TJ",
+    text: "Tajikistan"
+  }, {
+    value: "TZ",
+    text: "Tanzania"
+  }, {
+    value: "TH",
+    text: "Thailand"
+  }, {
+    value: "TL",
+    text: "Timor-Leste"
+  }, {
+    value: "TG",
+    text: "Togo"
+  }, {
+    value: "TO",
+    text: "Tonga"
+  }, {
+    value: "TT",
+    text: "Trinidad and Tobago"
+  }, {
+    value: "TN",
+    text: "Tunisia"
+  }, {
+    value: "TR",
+    text: "Turkey"
+  }, {
+    value: "TM",
+    text: "Turkmenistan"
+  }, {
+    value: "TV",
+    text: "Tuvalu"
+  }, {
+    value: "UG",
+    text: "Uganda"
+  }, {
+    value: "UA",
+    text: "Ukraine"
+  }, {
+    value: "AE",
+    text: "United Arab Emirates"
+  }, {
+    value: "GB",
+    text: "United Kingdom"
+  }, {
+    value: "US",
+    text: "United States"
+  }, {
+    value: "UY",
+    text: "Uruguay"
+  }, {
+    value: "UZ",
+    text: "Uzbekistan"
+  }, {
+    value: "VU",
+    text: "Vanuatu"
+  }, {
+    value: "VA",
+    text: "Vatican City"
+  }, {
+    value: "VE",
+    text: "Venezuela"
+  }, {
+    value: "VN",
+    text: "Vietnam"
+  }, {
+    value: "YE",
+    text: "Yemen"
+  }, {
+    value: "ZM",
+    text: "Zambia"
+  }, {
+    value: "ZW",
+    text: "Zimbabwe"
+  }];
+  let _0x447206 = [];
+  const _0x1900dd = document.getElementById("multiCountryTrigger");
+  const _0x3a661d = document.getElementById("multiCountryDropdown");
+  const _0x2ba995 = document.getElementById("multiCountrySearch");
+  const _0x28aee9 = document.getElementById("multiCountryClear");
+  const _0x11d10d = document.getElementById("multiCountryOptions");
+  const _0x4903f1 = document.getElementById("multiCountryTags");
+  function _0x215710(_0x320576 = "") {
+    _0x11d10d.innerHTML = "";
+    const _0x2acaf7 = _0xfbdf3.filter(_0x5e12d2 => _0x5e12d2.text.toLowerCase().includes(_0x320576.toLowerCase()) || _0x5e12d2.value.toLowerCase().includes(_0x320576.toLowerCase()));
+    _0x2acaf7.forEach(_0x242d6f => {
+      const _0x9eb395 = document.createElement("label");
+      _0x9eb395.className = "multi-select-option";
+      _0x9eb395.style.display = "flex";
+      _0x9eb395.style.alignItems = "center";
+      _0x9eb395.style.width = "100%";
+      _0x9eb395.style.cursor = "pointer";
+      const _0x28b214 = _0x447206.includes(_0x242d6f.value);
+      _0x9eb395.innerHTML = "\n        <input type=\"checkbox\" value=\"" + _0x242d6f.value + "\" " + (_0x28b214 ? "checked" : "") + ">\n        <span>" + _0x242d6f.text + "</span>\n      ";
+      const _0x547e81 = _0x9eb395.querySelector("input[type=\"checkbox\"]");
+      _0x547e81.onchange = () => {
+        _0x5aa0f2(_0x242d6f.value, _0x547e81.checked);
+      };
+      _0x11d10d.appendChild(_0x9eb395);
+    });
+  }
+  function _0x51c817() {}
+  function _0x5aa0f2(_0x5905d7, _0x41732b) {
+    if (_0x41732b) {
+      if (!_0x447206.includes(_0x5905d7)) {
+        _0x447206.push(_0x5905d7);
+      }
+    } else {
+      _0x447206 = _0x447206.filter(_0x24ac28 => _0x24ac28 !== _0x5905d7);
+    }
+    _0x21cd88();
+    _0x51c817();
+  }
+  function _0x21cd88() {
+    const _0xb66c92 = document.getElementById("multiCountryTriggerText");
+    if (_0x447206.length === 0) {
+      _0xb66c92.textContent = "Select Countries";
+    } else if (_0x447206.length === 1) {
+      const _0x4396e6 = _0xfbdf3.find(_0x26221d => _0x26221d.value === _0x447206[0]);
+      _0xb66c92.textContent = _0x4396e6 ? _0x4396e6.text : _0x447206.length + " selected";
+    } else {
+      _0xb66c92.textContent = _0x447206.length + " countries selected";
+    }
+    _0x4903f1.innerHTML = "";
+    _0x447206.forEach(_0x2deae3 => {
+      const _0x11f659 = _0xfbdf3.find(_0x232ef2 => _0x232ef2.value === _0x2deae3);
+      if (!_0x11f659) {
+        return;
+      }
+      const _0x395994 = document.createElement("div");
+      _0x395994.className = "multi-select-tag";
+      _0x395994.innerHTML = "\n        <span>" + _0x11f659.text + "</span>\n        <span class=\"multi-select-tag-remove\" data-val=\"" + _0x2deae3 + "\">×</span>\n      ";
+      _0x395994.querySelector(".multi-select-tag-remove").onclick = _0x34ac94 => {
+        _0x34ac94.stopPropagation();
+        _0x5aa0f2(_0x2deae3, false);
+        const _0x5d6201 = _0x11d10d.querySelector("input[value=\"" + _0x2deae3 + "\"]");
+        if (_0x5d6201) {
+          _0x5d6201.checked = false;
+        }
+      };
+      _0x4903f1.appendChild(_0x395994);
+    });
+  }
+  _0x1900dd.onclick = _0xfa5736 => {
+    _0xfa5736.stopPropagation();
+    const _0x2f8d45 = _0x3a661d.classList.contains("show");
+    if (_0x2f8d45) {
+      _0x3a661d.classList.remove("show");
+      _0x1900dd.classList.remove("active");
+    } else {
+      _0x3a661d.classList.add("show");
+      _0x1900dd.classList.add("active");
+      _0x2ba995.focus();
+    }
+  };
+  _0x2ba995.oninput = _0x38c150 => {
+    _0x215710(_0x38c150.target.value);
+  };
+  _0x2ba995.onclick = _0x295ee1 => {
+    _0x295ee1.stopPropagation();
+  };
+  _0x28aee9.onclick = _0x69e1f1 => {
+    _0x69e1f1.stopPropagation();
+    _0x447206 = [];
+    _0x21cd88();
+    _0x51c817();
+    _0x215710(_0x2ba995.value);
+  };
+  document.addEventListener("click", _0x2edd9f => {
+    const _0x1de71d = document.getElementById("multiCountryContainer");
+    if (_0x1de71d && !_0x1de71d.contains(_0x2edd9f.target)) {
+      _0x3a661d.classList.remove("show");
+      _0x1900dd.classList.remove("active");
+    }
+  });
+  _0x215710();
+  _0x21cd88();
+  _0x51c817();
+  const _0x21e7f5 = document.getElementById("currencyTrigger");
+  const _0x346df8 = document.getElementById("currencyDropdown");
+  const _0x4d548d = document.getElementById("currencySearch");
+  const _0x2d2bdf = document.getElementById("currencyOptions");
+  const _0x35f21e = document.getElementById("simple_currency");
+  const _0x399d62 = [{
+    value: "USD",
+    text: "USD - US Dollar"
+  }, {
+    value: "EUR",
+    text: "EUR - Euro"
+  }, {
+    value: "BRL",
+    text: "BRL - Brazilian Real"
+  }, {
+    value: "SAR",
+    text: "SAR - Saudi Riyal"
+  }, {
+    value: "BDT",
+    text: "BDT - Bangladeshi Taka"
+  }, {
+    value: "INR",
+    text: "INR - Indian Rupee"
+  }, {
+    value: "PKR",
+    text: "PKR - Pakistani Rupee"
+  }, {
+    value: "CAD",
+    text: "CAD - Canadian Dollar"
+  }, {
+    value: "AED",
+    text: "AED - UAE Dirham"
+  }, {
+    value: "DZD",
+    text: "DZD - Algerian Dinar"
+  }, {
+    value: "ARS",
+    text: "ARS - Argentine Peso"
+  }, {
+    value: "AUD",
+    text: "AUD - Australian Dollar"
+  }, {
+    value: "BHD",
+    text: "BHD - Bahraini Dinar"
+  }, {
+    value: "BOB",
+    text: "BOB - Bolivian Boliviano"
+  }, {
+    value: "GBP",
+    text: "GBP - British Pound Sterling"
+  }, {
+    value: "CLP",
+    text: "CLP - Chilean Peso"
+  }, {
+    value: "CNY",
+    text: "CNY - Chinese Yuan"
+  }, {
+    value: "COP",
+    text: "COP - Colombian Peso"
+  }, {
+    value: "CRC",
+    text: "CRC - Costa Rican Colón"
+  }, {
+    value: "CZK",
+    text: "CZK - Czech Koruna"
+  }, {
+    value: "DKK",
+    text: "DKK - Danish Krone"
+  }, {
+    value: "EGP",
+    text: "EGP - Egyptian Pound"
+  }, {
+    value: "GTQ",
+    text: "GTQ - Guatemalan Quetzal"
+  }, {
+    value: "HNL",
+    text: "HNL - Honduran Lempira"
+  }, {
+    value: "HKD",
+    text: "HKD - Hong Kong Dollar"
+  }, {
+    value: "HUF",
+    text: "HUF - Hungarian Forint"
+  }, {
+    value: "IDR",
+    text: "IDR - Indonesian Rupiah"
+  }, {
+    value: "ILS",
+    text: "ILS - Israeli New Shekel"
+  }, {
+    value: "JPY",
+    text: "JPY - Japanese Yen"
+  }, {
+    value: "JOD",
+    text: "JOD - Jordanian Dinar"
+  }, {
+    value: "KES",
+    text: "KES - Kenyan Shilling"
+  }, {
+    value: "KWD",
+    text: "KWD - Kuwaiti Dinar"
+  }, {
+    value: "LBP",
+    text: "LBP - Lebanese Pound"
+  }, {
+    value: "MOP",
+    text: "MOP - Macanese Pataca"
+  }, {
+    value: "MYR",
+    text: "MYR - Malaysian Ringgit"
+  }, {
+    value: "MXN",
+    text: "MXN - Mexican Peso"
+  }, {
+    value: "MAD",
+    text: "MAD - Moroccan Dirham"
+  }, {
+    value: "TWD",
+    text: "TWD - New Taiwan Dollar"
+  }, {
+    value: "NZD",
+    text: "NZD - New Zealand Dollar"
+  }, {
+    value: "NIO",
+    text: "NIO - Nicaraguan Córdoba"
+  }, {
+    value: "NGN",
+    text: "NGN - Nigerian Naira"
+  }, {
+    value: "NOK",
+    text: "NOK - Norwegian Krone"
+  }, {
+    value: "OMR",
+    text: "OMR - Omani Rial"
+  }, {
+    value: "PYG",
+    text: "PYG - Paraguayan Guaraní"
+  }, {
+    value: "PEN",
+    text: "PEN - Peruvian Sol"
+  }, {
+    value: "PHP",
+    text: "PHP - Philippine Peso"
+  }, {
+    value: "PLN",
+    text: "PLN - Polish Złoty"
+  }, {
+    value: "QAR",
+    text: "QAR - Qatari Riyal"
+  }, {
+    value: "RON",
+    text: "RON - Romanian Leu"
+  }, {
+    value: "SGD",
+    text: "SGD - Singapore Dollar"
+  }, {
+    value: "ZAR",
+    text: "ZAR - South African Rand"
+  }, {
+    value: "KRW",
+    text: "KRW - South Korean Won"
+  }, {
+    value: "SEK",
+    text: "SEK - Swedish Krona"
+  }, {
+    value: "CHF",
+    text: "CHF - Swiss Franc"
+  }, {
+    value: "THB",
+    text: "THB - Thai Baht"
+  }, {
+    value: "TRY",
+    text: "TRY - Turkish Lira"
+  }, {
+    value: "UAH",
+    text: "UAH - Ukrainian Hryvnia"
+  }, {
+    value: "UYU",
+    text: "UYU - Uruguayan Peso"
+  }, {
+    value: "VND",
+    text: "VND - Vietnamese Dong"
+  }];
+  function _0x4cca3a(_0x551dd3 = "") {
+    _0x2d2bdf.innerHTML = "";
+    const _0x451734 = _0x399d62.filter(_0x33ffc3 => _0x33ffc3.text.toLowerCase().includes(_0x551dd3.toLowerCase()) || _0x33ffc3.value.toLowerCase().includes(_0x551dd3.toLowerCase()));
+    _0x451734.forEach(_0x448280 => {
+      const _0x357650 = document.createElement("div");
+      _0x357650.className = "multi-select-option";
+      _0x357650.style.fontSize = "11px";
+      _0x357650.style.padding = "8px 14px";
+      _0x357650.innerHTML = "<span>" + _0x448280.text + "</span>";
+      _0x357650.onclick = _0x21d11a => {
+        _0x21d11a.stopPropagation();
+        _0x35f21e.value = _0x448280.value;
+        document.getElementById("currencyTriggerText").textContent = _0x448280.text;
+        _0x35f21e.dispatchEvent(new Event("change"));
+        _0x346df8.classList.remove("show");
+        _0x21e7f5.classList.remove("active");
+      };
+      _0x2d2bdf.appendChild(_0x357650);
+    });
+  }
+  _0x21e7f5.onclick = _0x2a2420 => {
+    _0x2a2420.stopPropagation();
+    const _0x3afd59 = _0x346df8.classList.contains("show");
+    if (_0x3afd59) {
+      _0x346df8.classList.remove("show");
+      _0x21e7f5.classList.remove("active");
+    } else {
+      _0x3a661d.classList.remove("show");
+      _0x1900dd.classList.remove("active");
+      _0x346df8.classList.add("show");
+      _0x21e7f5.classList.add("active");
+      _0x4d548d.focus();
+      _0x4cca3a(_0x4d548d.value);
+    }
+  };
+  _0x4d548d.oninput = _0x4c4d33 => {
+    _0x4cca3a(_0x4c4d33.target.value);
+  };
+  _0x4d548d.onclick = _0x515804 => {
+    _0x515804.stopPropagation();
+  };
+  document.addEventListener("click", _0xe39ee0 => {
+    const _0x48a5a0 = document.getElementById("currencyDropdownContainer");
+    if (_0x48a5a0 && !_0x48a5a0.contains(_0xe39ee0.target)) {
+      _0x346df8.classList.remove("show");
+      _0x21e7f5.classList.remove("active");
+    }
+  });
+  _0x4cca3a();
+  document.getElementById("simple_ad_account_id").oninput = function () {
+    this.value = this.value.replace(/\D/g, "");
+  };
+  const _0x2bbb6b = document.getElementById("post_image");
+  const _0x56e20f = document.getElementById("file_btn_text");
+  _0x2bbb6b.onchange = _0x45c6e0 => {
+    if (_0x45c6e0.target.files && _0x45c6e0.target.files[0]) {
+      const _0x1a8f90 = _0x45c6e0.target.files[0];
+      _0x56e20f.innerHTML = "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path><polyline points=\"22 4 12 14.01 9 11.01\"></polyline></svg> Selected: " + _0x1a8f90.name;
+      _0x56e20f.style.borderColor = "var(--success)";
+      _0x56e20f.style.color = "var(--success)";
+      const _0x13d740 = document.getElementById("post_preview_img");
+      const _0x5d6253 = document.getElementById("post_preview_video");
+      const _0x36dd34 = document.getElementById("post_preview_container");
+      if (_0x1a8f90.type.startsWith("video/")) {
+        _0x13d740.style.display = "none";
+        _0x13d740.src = "";
+        _0x5d6253.src = URL.createObjectURL(_0x1a8f90);
+        _0x5d6253.style.display = "block";
+        _0x36dd34.style.display = "block";
+      } else {
+        _0x5d6253.style.display = "none";
+        _0x5d6253.src = "";
+        const _0x2dc44c = new FileReader();
+        _0x2dc44c.onload = _0x2cb819 => {
+          _0x13d740.src = _0x2cb819.target.result;
+          _0x13d740.style.display = "block";
+          _0x36dd34.style.display = "block";
+        };
+        _0x2dc44c.readAsDataURL(_0x1a8f90);
+      }
+    }
+  };
+  function _0x59de9d() {
+    return _0x5848e6("i_user") || _0x5848e6("c_user") || "";
+  }
+  function _0x3c190f() {
+    let _0x266a08 = "";
+    for (let _0x15a5cd = 0; _0x15a5cd < 32; _0x15a5cd++) {
+      _0x266a08 += Math.floor(Math.random() * 16).toString(16);
+    }
+    return _0x266a08;
+  }
+  async function _0x421be8(_0x49aa91, _0x449710, _0x5d4305, _0x39c83c, _0xb7944a) {
+    const _0x2cbe10 = _0x39db6e();
+    const _0x2e4b14 = _0x173620();
+    const _0x2ab953 = _0x59de9d();
+    const _0xcc5cd5 = new URLSearchParams({
+      waterfall_id: _0x5d4305,
+      target_id: _0x49aa91,
+      video_id: _0x449710,
+      source: "newsfeed_composer",
+      composer_entry_point_ref: "feed",
+      supports_chunking: "true",
+      supports_upload_service: "true",
+      partition_start_offset: "0",
+      partition_end_offset: _0x39c83c.toString(),
+      start_offset: "0",
+      end_offset: _0x39c83c.toString(),
+      upload_speed: "20000000",
+      fbuploader_video_file_chunk: _0xb7944a,
+      composer_dialog_version: "V2",
+      __aaid: "0",
+      __user: _0x2ab953,
+      __a: "1",
+      fb_dtsg: _0x2cbe10,
+      jazoest: _0x3d30cd(_0x2cbe10),
+      lsd: _0x2e4b14
+    });
+    const _0x180afc = await fetch("https://vupload2.facebook.com/ajax/video/upload/requests/receive/?av=" + _0x2ab953 + "&__a=1", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        x_fb_video_waterfall_id: _0x5d4305
+      },
+      body: _0xcc5cd5.toString()
+    });
+    const _0x23bf91 = await _0x180afc.text();
+    let _0x23830b = {};
+    try {
+      _0x23830b = JSON.parse(_0x23bf91.replace(/^for\s*\(;;\);\s*/, ""));
+    } catch (_0x221eb7) {
+      throw new Error("Invalid finalization response: " + _0x23bf91.substring(0, 150));
+    }
+    if (_0x23830b.error || _0x23830b.errorSummary) {
+      throw new Error("Finalization error: " + (_0x23830b.errorSummary || _0x23830b.errorDescription || JSON.stringify(_0x23830b)));
+    }
+    return _0x23830b;
+  }
+  async function _0x3f06e9(_0x414262, _0x4ea768, _0x3cbdef) {
+    const _0x57da5f = _0x39db6e();
+    const _0x39f617 = _0x173620();
+    const _0x1e0b85 = _0x59de9d();
+    const _0x38ff3a = _0x121e29();
+    const _0x32f3db = "27450471367978057";
+    const _0xc0ab9e = {
+      ranges: [],
+      text: _0x4ea768
+    };
+    const _0x126ff1 = {
+      audio_descriptions: null,
+      id: _0x3cbdef,
+      additional_video_metadata: {
+        translatedAudioMetadata: []
+      },
+      notify_when_processed: true,
+      transcriptions: null,
+      was_created_via_unified_video_flow: {
+        was_created_via_unified_video_flow: true
+      }
+    };
+    const _0x455fcf = {
+      video: _0x126ff1
+    };
+    const _0x54fdfc = {
+      input: {
+        composer_entry_point: "inline_composer",
+        composer_source_surface: "newsfeed",
+        composer_type: "feed",
+        idempotence_token: _0x38ff3a + "_FEED",
+        source: "WWW",
+        audience: {
+          privacy: {
+            allow: [],
+            base_state: "EVERYONE",
+            deny: [],
+            tag_expansion_state: "UNSPECIFIED"
+          }
+        },
+        message: _0xc0ab9e,
+        inline_activities: [],
+        text_format_preset_id: "0",
+        publishing_flow: {
+          supported_flows: ["ASYNC_SILENT", "ASYNC_NOTIF", "FALLBACK"]
+        },
+        reels_remix: {
+          is_original_audio_reusable: true,
+          remix_status: "ENABLED"
+        },
+        post_publish_story_data: {
+          reshare_post_as_sticker: "DISABLED"
+        },
+        attachments: [_0x455fcf],
+        logging: {
+          composer_session_id: _0x38ff3a
+        },
+        navigation_data: {
+          attribution_id_v2: "CometHomeRoot.react,comet.home,via_cold_start," + Date.now() + ",774978,4748854339,,"
+        },
+        tracking: [null],
+        event_share_metadata: {
+          surface: "newsfeed"
+        },
+        actor_id: _0x414262,
+        client_mutation_id: "1"
+      },
+      feedLocation: "NEWSFEED",
+      feedbackSource: 1,
+      focusCommentID: null,
+      gridMediaWidth: null,
+      groupID: null,
+      scale: 1,
+      privacySelectorRenderLocation: "COMET_STREAM",
+      checkPhotosToReelsUpsellEligibility: true,
+      referringStoryRenderLocation: null,
+      renderLocation: "homepage_stream",
+      useDefaultActor: false,
+      inviteShortLinkKey: null,
+      isFeed: true,
+      isFundraiser: false,
+      isFunFactPost: false,
+      isGroup: false,
+      isEvent: false,
+      isTimeline: false,
+      isSocialLearning: false,
+      isPageNewsFeed: false,
+      isProfileReviews: false,
+      isWorkSharedDraft: false,
+      __relay_internal__pv__CometUFIShareActionMigrationrelayprovider: true,
+      __relay_internal__pv__GHLShouldChangeSponsoredDataFieldNamerelayprovider: true,
+      __relay_internal__pv__GHLShouldChangeAdIdFieldNamerelayprovider: true,
+      __relay_internal__pv__CometUFI_dedicated_comment_routable_dialog_gkrelayprovider: true,
+      __relay_internal__pv__CometUFICommentAutoTranslationTyperelayprovider: "AUTO_TRANSLATE",
+      __relay_internal__pv__CometUFICommentAvatarStickerAnimatedImagerelayprovider: false,
+      __relay_internal__pv__CometUFICommentActionLinksRewriteEnabledrelayprovider: false,
+      __relay_internal__pv__IsWorkUserrelayprovider: false,
+      __relay_internal__pv__CometUFIReactionsEnableShortNamerelayprovider: false,
+      __relay_internal__pv__CometUFISingleLineUFIrelayprovider: false,
+      __relay_internal__pv__CometFeedStory_enable_reactor_facepilerelayprovider: false,
+      __relay_internal__pv__CometFeedStory_enable_social_bubblesrelayprovider: false,
+      __relay_internal__pv__CometFeedStory_enable_post_permalink_white_space_clickrelayprovider: false,
+      __relay_internal__pv__TestPilotShouldIncludeDemoAdUseCaserelayprovider: false,
+      __relay_internal__pv__FBReels_deprecate_short_form_video_context_gkrelayprovider: true,
+      __relay_internal__pv__FBReels_enable_view_dubbed_audio_type_gkrelayprovider: true,
+      __relay_internal__pv__CometFeedShareMedia_shouldPrefetchShareImagerelayprovider: false,
+      __relay_internal__pv__CometImmersivePhotoCanUserDisable3DMotionrelayprovider: false,
+      __relay_internal__pv__WorkCometIsEmployeeGKProviderrelayprovider: false,
+      __relay_internal__pv__IsMergQAPollsrelayprovider: false,
+      __relay_internal__pv__FBReelsMediaFooter_comet_enable_reels_ads_gkrelayprovider: true,
+      __relay_internal__pv__relay_provider_comet_ufi_ssr_seo_deferrelayprovider: true,
+      __relay_internal__pv__ReelsIFUCard_reelsIFULikeCountrelayprovider: false,
+      __relay_internal__pv__FBReelsIFUTileContent_reelsIFUPlayOnHoverrelayprovider: true,
+      __relay_internal__pv__GroupsCometGYSJFeedItemHeightrelayprovider: 206,
+      __relay_internal__pv__ShouldEnableBakedInTextStoriesrelayprovider: false,
+      __relay_internal__pv__StoriesShouldIncludeFbNotesrelayprovider: false,
+      __relay_internal__pv__groups_comet_use_glvrelayprovider: false,
+      __relay_internal__pv__GHLShouldChangeSponsoredAuctionDistanceFieldNamerelayprovider: false,
+      __relay_internal__pv__GHLShouldUseSponsoredAuctionLabelFieldNameV1relayprovider: false,
+      __relay_internal__pv__GHLShouldUseSponsoredAuctionLabelFieldNameV2relayprovider: false
+    };
+    const _0x5c1e60 = await _0x1971f7(_0x32f3db, _0x54fdfc, "ComposerStoryCreateMutation", _0x1e0b85);
+    const _0x2e2b78 = _0x5c1e60?.data?.story_create;
+    const _0x43e4ec = _0x2e2b78?.post_id || _0x2e2b78?.story?.id || _0x2e2b78?.story?.post_id || _0x2e2b78?.story?.legacy_story_hideable_id || null;
+    let _0x3a577a = null;
+    try {
+      const _0x510cc7 = _0x2e2b78?.story_id || "";
+      if (_0x510cc7) {
+        const _0xd0a5c9 = atob(_0x510cc7);
+        const _0x3513e1 = _0xd0a5c9.split(":");
+        if (_0x3513e1.length >= 2) {
+          _0x3a577a = _0x3513e1[1].replace(/[^0-9]/g, "");
+        }
+      }
+    } catch (_0x2ad876) {}
+    const _0x30ab4b = {
+      postId: _0x43e4ec,
+      pageId: _0x3a577a
+    };
+    return _0x30ab4b;
+  }
+  async function _0x1bdcd7(_0x125ee7) {
+    const _0xc7a614 = _0x39db6e();
+    const _0x10e2c4 = _0x173620();
+    const _0x248406 = _0x59de9d();
+    const _0x5acd02 = _0x121e29();
+    const _0xc01b3e = new FormData();
+    _0xc01b3e.append("av", _0x248406);
+    _0xc01b3e.append("__user", _0x248406);
+    _0xc01b3e.append("fb_dtsg", _0xc7a614);
+    _0xc01b3e.append("lsd", _0x10e2c4);
+    _0xc01b3e.append("__a", "1");
+    _0xc01b3e.append("__aaid", "0");
+    _0xc01b3e.append("source", "15");
+    _0xc01b3e.append("composer_session_id", _0x5acd02);
+    _0xc01b3e.append("farr", _0x125ee7, _0x125ee7.name);
+    const _0x5eb99a = "https://www.facebook.com/ajax/react_composer/attachments/photo/upload?av=" + _0x248406 + "&__user=" + _0x248406 + "&fb_dtsg=" + encodeURIComponent(_0xc7a614) + "&__aaid=0&__a=1";
+    const _0x31699c = await fetch(_0x5eb99a, {
+      method: "POST",
+      credentials: "include",
+      body: _0xc01b3e
+    });
+    const _0x23db4c = await _0x31699c.text();
+    const _0x88e399 = JSON.parse(_0x23db4c.replace(/^for\s*\(;;\);\s*/, ""));
+    return _0x88e399?.payload?.photoID || _0x88e399?.payload?.photo_id || _0x88e399?.payload?.id || _0x88e399?.payload?.fbid || null;
+  }
+  async function _0x4cf08d(_0xa41f8a, _0x3311eb) {
+    const _0x294893 = _0x121e29();
+    const _0x4c9264 = "26875298538720295";
+    const _0x229c1e = _0x59de9d();
+    const _0x437a0d = {
+      id: _0x3311eb
+    };
+    const _0x5143a6 = {
+      photo: _0x437a0d
+    };
+    const _0x1ce061 = {
+      ranges: [],
+      text: _0xa41f8a
+    };
+    const _0x87a235 = {
+      input: {
+        composer_entry_point: "inline_composer",
+        composer_source_surface: "timeline",
+        idempotence_token: _0x294893 + "_FEED",
+        source: "WWW",
+        attachments: [_0x5143a6],
+        audience: {
+          privacy: {
+            allow: [],
+            base_state: "EVERYONE",
+            deny: [],
+            tag_expansion_state: "UNSPECIFIED"
+          }
+        },
+        message: _0x1ce061,
+        with_tags_ids: null,
+        inline_activities: [],
+        text_format_preset_id: "0",
+        publishing_flow: {
+          supported_flows: ["ASYNC_SILENT", "ASYNC_NOTIF", "FALLBACK"]
+        },
+        post_publish_story_data: {
+          reshare_post_as_sticker: "DISABLED"
+        },
+        logging: {
+          composer_session_id: _0x294893
+        },
+        navigation_data: {
+          attribution_id_v2: "ProfileCometTimelineListViewRoot.react,comet.profile.timeline.list,via_cold_start," + Date.now() + "," + Math.floor(Math.random() * 100000) + ",190055527696468,,"
+        },
+        tracking: [null],
+        event_share_metadata: {
+          surface: "timeline"
+        },
+        actor_id: _0x229c1e,
+        client_mutation_id: "6"
+      },
+      feedLocation: "TIMELINE",
+      feedbackSource: 0,
+      focusCommentID: null,
+      gridMediaWidth: 230,
+      groupID: null,
+      scale: 1,
+      privacySelectorRenderLocation: "COMET_STREAM",
+      checkPhotosToReelsUpsellEligibility: true,
+      referringStoryRenderLocation: null,
+      renderLocation: "timeline",
+      useDefaultActor: false,
+      inviteShortLinkKey: null,
+      isFeed: false,
+      isFundraiser: false,
+      isFunFactPost: false,
+      isGroup: false,
+      isEvent: false,
+      isTimeline: true,
+      isSocialLearning: false,
+      isPageNewsFeed: false,
+      isProfileReviews: false,
+      isWorkSharedDraft: false,
+      canUserManageOffers: false,
+      __relay_internal__pv__CometUFIShareActionMigrationrelayprovider: true,
+      __relay_internal__pv__GHLShouldChangeSponsoredDataFieldNamerelayprovider: true,
+      __relay_internal__pv__GHLShouldChangeAdIdFieldNamerelayprovider: true,
+      __relay_internal__pv__CometUFI_dedicated_comment_routable_dialog_gkrelayprovider: true,
+      __relay_internal__pv__CometUFICommentAutoTranslationTyperelayprovider: "ORIGINAL",
+      __relay_internal__pv__CometUFICommentAvatarStickerAnimatedImagerelayprovider: false,
+      __relay_internal__pv__CometUFICommentActionLinksRewriteEnabledrelayprovider: false,
+      __relay_internal__pv__IsMergQAPollsrelayprovider: false,
+      __relay_internal__pv__FBReelsMediaFooter_comet_enable_reels_ads_gkrelayprovider: true,
+      __relay_internal__pv__FBReelsIFUTileContent_reelsIFUPlayOnHoverrelayprovider: true,
+      __relay_internal__pv__GroupsCometGYSJFeedItemHeightrelayprovider: 206,
+      __relay_internal__pv__ShouldEnableBakedInTextStoriesrelayprovider: false,
+      __relay_internal__pv__StoriesShouldIncludeFbNotesrelayprovider: false,
+      __relay_internal__pv__groups_comet_use_glvrelayprovider: false,
+      __relay_internal__pv__GHLShouldChangeSponsoredAuctionDistanceFieldNamerelayprovider: true,
+      __relay_internal__pv__GHLShouldUseSponsoredAuctionLabelFieldNameV1relayprovider: false,
+      __relay_internal__pv__GHLShouldUseSponsoredAuctionLabelFieldNameV2relayprovider: true
+    };
+    const _0x3cec0b = await _0x1971f7(_0x4c9264, _0x87a235, "ComposerStoryCreateMutation", _0x229c1e);
+    const _0x425fe8 = _0x3cec0b?.data?.story_create;
+    const _0x2dfdbc = _0x425fe8?.post_id || _0x425fe8?.story?.id || _0x425fe8?.story?.post_id || _0x425fe8?.story?.legacy_story_hideable_id || null;
+    let _0x19c234 = null;
+    try {
+      const _0x534bdf = _0x425fe8?.story_id || "";
+      if (_0x534bdf) {
+        const _0x4639c4 = atob(_0x534bdf);
+        const _0x3c95f4 = _0x4639c4.split(":");
+        if (_0x3c95f4.length >= 2) {
+          _0x19c234 = _0x3c95f4[1].replace(/[^0-9]/g, "");
+        }
+      }
+    } catch (_0x10574d) {}
+    const _0x67bc67 = {
+      postId: _0x2dfdbc,
+      pageId: _0x19c234
+    };
+    return _0x67bc67;
+  }
+  document.getElementById("fastPostBtn").onclick = async function () {
+    const _0x329e54 = document.getElementById("post_caption").value.trim();
+    const _0x4ac1ce = _0x2bbb6b.files[0];
+    const _0x2291b9 = this;
+    const _0x1af3c2 = _0x2291b9.querySelector(".post-spinner");
+    if (!_0x4ac1ce) {
+      _0x1f61f("error", "⚠️ Please select a file (image or video) first.", true);
+      return;
+    }
+    _0x2291b9.disabled = true;
+    _0x1af3c2.style.display = "inline-block";
+    try {
+      const _0xbb2e6c = _0x4ac1ce.type.startsWith("video/");
+      if (_0xbb2e6c) {
+        _0x1f61f("info", "🚀 Initializing video upload session...", true);
+        const _0x371089 = _0x59de9d();
+        const _0x35fe54 = _0x39db6e();
+        const _0x2b0395 = _0x173620();
+        const _0x2bb989 = _0x3c190f();
+        const _0x4cf687 = _0x4ac1ce.name.split(".").pop() || "mp4";
+        const _0x3161c4 = new URLSearchParams({
+          waterfall_id: _0x2bb989,
+          target_id: _0x371089,
+          source: "newsfeed_composer",
+          composer_entry_point_ref: "feed",
+          supports_chunking: "true",
+          supports_file_api: "true",
+          file_size: _0x4ac1ce.size.toString(),
+          file_extension: _0x4cf687,
+          partition_start_offset: "0",
+          partition_end_offset: _0x4ac1ce.size.toString(),
+          composer_dialog_version: "V2",
+          __aaid: "0",
+          __user: _0x371089,
+          __a: "1",
+          fb_dtsg: _0x35fe54,
+          jazoest: _0x3d30cd(_0x35fe54),
+          lsd: _0x2b0395
+        });
+        const _0x4b0b4c = await fetch("https://vupload2.facebook.com/ajax/video/upload/requests/start/?av=" + _0x371089 + "&__a=1", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            x_fb_video_waterfall_id: _0x2bb989
+          },
+          body: _0x3161c4.toString()
+        });
+        const _0x4ea4a1 = await _0x4b0b4c.text();
+        let _0xf6ca7a = {};
+        try {
+          _0xf6ca7a = JSON.parse(_0x4ea4a1.replace(/^for\s*\(;;\);\s*/, ""));
+        } catch (_0x30a9ad) {
+          throw new Error("Invalid initialization response: " + _0x4ea4a1.substring(0, 150));
+        }
+        const _0x71a424 = _0xf6ca7a.payload?.upload_session_id || _0xf6ca7a.payload?.id;
+        const _0x2d75a4 = _0xf6ca7a.payload?.video_id;
+        if (!_0x71a424 || !_0x2d75a4) {
+          if (_0xf6ca7a.error || _0xf6ca7a.errorSummary) {
+            throw new Error("Init error: " + (_0xf6ca7a.errorSummary || _0xf6ca7a.errorDescription || JSON.stringify(_0xf6ca7a)));
+          }
+          throw new Error("Failed to initialize session. Make sure your browser session is valid. Raw: " + _0x4ea4a1.substring(0, 150));
+        }
+        _0x1f61f("info", "🔍 Checking upload edge server status...", true);
+        const _0x1c7b0d = _0x71a424;
+        const _0x3ca040 = "https://rupload-ccu1-1.up.facebook.com/fb_video/" + _0x1c7b0d + "-0-" + _0x4ac1ce.size + "?__aaid=0&__user=" + _0x371089 + "&__a=1&fb_dtsg=" + encodeURIComponent(_0x35fe54) + "&lsd=" + encodeURIComponent(_0x2b0395) + "&jazoest=" + _0x3d30cd(_0x35fe54);
+        const _0x4b1a1d = await fetch(_0x3ca040, {
+          method: "GET",
+          credentials: "include"
+        });
+        if (!_0x4b1a1d.ok) {
+          throw new Error("Failed status check on upload edge server.");
+        }
+        _0x1f61f("info", "📤 Uploading video content...", true);
+        const _0x90f97b = new Promise((_0x2b3f9f, _0x2d2509) => {
+          const _0x3f9981 = new XMLHttpRequest();
+          _0x3f9981.open("POST", _0x3ca040, true);
+          _0x3f9981.withCredentials = true;
+          _0x3f9981.setRequestHeader("composer_session_id", _0x2bb989);
+          _0x3f9981.setRequestHeader("id", _0x71a424);
+          _0x3f9981.setRequestHeader("product_media_id", _0x2d75a4);
+          _0x3f9981.setRequestHeader("start_offset", "0");
+          _0x3f9981.setRequestHeader("end_offset", _0x4ac1ce.size.toString());
+          _0x3f9981.setRequestHeader("offset", "0");
+          _0x3f9981.setRequestHeader("x-entity-length", _0x4ac1ce.size.toString());
+          _0x3f9981.setRequestHeader("x-entity-name", encodeURIComponent(_0x4ac1ce.name));
+          _0x3f9981.setRequestHeader("x-entity-type", _0x4ac1ce.type || "video/mp4");
+          _0x3f9981.setRequestHeader("x-total-asset-size", _0x4ac1ce.size.toString());
+          _0x3f9981.upload.onprogress = _0x2ddf15 => {
+            if (_0x2ddf15.lengthComputable) {
+              const _0x305917 = Math.floor(_0x2ddf15.loaded / _0x2ddf15.total * 100);
+              _0x1f61f("info", "📤 Uploading video content... (" + _0x305917 + "%)", true);
+            }
+          };
+          _0x3f9981.onload = () => {
+            if (_0x3f9981.status >= 200 && _0x3f9981.status < 300) {
+              try {
+                const _0x4e3c53 = JSON.parse(_0x3f9981.responseText);
+                _0x2b3f9f(_0x4e3c53);
+              } catch (_0x241312) {
+                _0x2d2509(new Error("Upload succeeded, but edge returned invalid JSON."));
+              }
+            } else {
+              _0x2d2509(new Error("Upload failed with status code " + _0x3f9981.status + ". Response: " + _0x3f9981.responseText.substring(0, 150)));
+            }
+          };
+          _0x3f9981.onerror = () => _0x2d2509(new Error("Network error during file chunk upload."));
+          _0x3f9981.send(_0x4ac1ce);
+        });
+        const _0x3d4276 = await _0x90f97b;
+        const _0x331d41 = _0x3d4276.h;
+        if (!_0x331d41) {
+          throw new Error("Upload edge server did not return a file handle.");
+        }
+        _0x1f61f("info", "⚙️ Finalizing video upload...", true);
+        await _0x421be8(_0x371089, _0x2d75a4, _0x2bb989, _0x4ac1ce.size, _0x331d41);
+        _0x1f61f("info", "📝 Publishing video post...", true);
+        const {
+          postId: _0x32bc62,
+          pageId: _0x6f8822
+        } = await _0x3f06e9(_0x371089, _0x329e54, _0x2d75a4);
+        if (!_0x32bc62) {
+          throw new Error("Video post creation failed.");
+        }
+        document.getElementById("simple_post_id").value = _0x32bc62;
+        if (_0x6f8822) {
+          document.getElementById("simple_page_id").value = _0x6f8822;
+        }
+        _0x1f61f("success", "✅ Video post created successfully!<br>Post ID: " + _0x32bc62 + "<br>Page ID: " + (_0x6f8822 || "Manual fill needed"), true);
+        document.getElementById("simple_post_id").style.borderColor = "var(--success)";
+        document.getElementById("simple_page_id").style.borderColor = "var(--success)";
+        setTimeout(() => {
+          document.getElementById("simple_post_id").style.borderColor = "";
+          document.getElementById("simple_page_id").style.borderColor = "";
+        }, 2000);
+      } else {
+        _0x1f61f("info", "📸 Uploading image...", true);
+        const _0x402218 = await _0x1bdcd7(_0x4ac1ce);
+        if (!_0x402218) {
+          throw new Error("Media upload failed.");
+        }
+        _0x1f61f("info", "📝 Creating image post...", true);
+        const {
+          postId: _0xc00482,
+          pageId: _0x1fe292
+        } = await _0x4cf08d(_0x329e54, _0x402218);
+        if (!_0xc00482) {
+          throw new Error("Post creation failed.");
+        }
+        document.getElementById("simple_post_id").value = _0xc00482;
+        if (_0x1fe292) {
+          document.getElementById("simple_page_id").value = _0x1fe292;
+        }
+        _0x1f61f("success", "✅ Post created successfully!<br>Post ID: " + _0xc00482 + "<br>Page ID: " + (_0x1fe292 || "Manual fill needed"), true);
+        document.getElementById("simple_post_id").style.borderColor = "var(--success)";
+        document.getElementById("simple_page_id").style.borderColor = "var(--success)";
+        setTimeout(() => {
+          document.getElementById("simple_post_id").style.borderColor = "";
+          document.getElementById("simple_page_id").style.borderColor = "";
+        }, 2000);
+      }
+    } catch (_0x6e9f01) {
+      _0x1f61f("error", "❌ Fast Post Failed: " + _0x6e9f01.message, true);
+    } finally {
+      _0x2291b9.disabled = false;
+      _0x1af3c2.style.display = "none";
+    }
+  };
+  const _0xec42d3 = ["🔥 CLICK HERE TO WATCH MORE! 🔞", "🔞 WATCH FULL VIDEO NOW! 👇🔥", "💦 Watch the leaks before it gets deleted! 👇🔞", "🔥 LEAKED VIDEO! CLICK TO WATCH NOW! 🔞👇", "🍒 Exclusive hot video inside! Watch now! 👇🔞", "🔥 OMG! Watch this hot leak! 👇💦", "🔞 REAL VIDEO LEAKED! Watch here immediately! 👇🔥", "💦 DON'T MISS THIS! Click here to watch! 🔞👇", "🔞 VIRAL LEAK VIDEO! WATCH NOW! 👅🔥", "🔥 CLICK HERE TO WATCH THE FULL SCENE! 🔞👇", "💦 LEAKS EVERYWHERE! WATCH FULL HD VIDEO! 🔞👇", "🌶️ Spicy video released! Click to watch! 🔞👇", "🔥 FULL UNCENSORED VIDEO IS HERE! 🔞👇", "🍑 She did what?! Watch the full leak now! 🔞👇", "🔞 EXCLUSIVE LEAK VIDEO! CLICK HERE! 👇🔥", "💦 NEW LEAKS! Tap here to watch full video! 🔞👇", "🔥 VIRAL VIDEO LINK! Click to watch now! 🔞👇", "🔞 UNCUT & UNCENSORED! CLICK HERE TO WATCH! 👇💦", "👅 OMG watch this before they ban it! 👇🔞", "🔞 NO SIGN UP! Watch the full video directly! 👇🔥", "🔥 Watch before it's deleted! 🔞👇", "🔞 CHAT WITH HER NOW! 👇💬", "💦 LEAKED TODAY! CLICK TO WATCH! 🔞👇", "🔥 OH MY GOD! SHE DID IT! 🔞👇", "🔞 TOP SECRET VIDEO LINK! 👇🤫", "🍑 100% FREE TO WATCH! CLICK NOW! 🔞👇", "💦 EXCLUSIVE LEAKED SCENE OUT! 🔞👇", "🔥 EVERYONE IS WATCHING THIS! 🔞👇", "🔞 FULL HIGH-DEFINITION LEAK! 👇🎥", "🔞 VIP CONTENT UNLOCKED! CLICK HERE! 🔞👇", "👅 SHE IS SO HOT! WATCH FULL CLIP! 👇💦", "🔥 TOO HOT FOR SOCIAL MEDIA! WATCH HERE! 🔞👇", "🔞 PRIVATE LEAKS RELEASED! WATCH NOW! 👇💦", "🌶️ SPICIEST SCENE OF THE YEAR! 🔞👇", "💦 HER ONLY PRIVATE VIDEO LEAKED! 🔞👇", "🔥 HURRY UP! WATCH IT NOW! 🔞👇", "🔞 UNBELIEVABLE HOT SHOT! CLICK HERE! 👇🔥", "🍑 WANNA SEE MORE? CLICK HERE! 🔞👇", "💦 LEAK OF THE DAY! WATCH NOW! 🔞👇", "🔥 NO FILTER, NO SENSOR! WATCH FULL! 🔞👇", "🔞 THE BIGGEST LEAK OF THE YEAR! 🔞👇", "💦 LEAKED SCENE BY POPULAR DEMAND! 👇🎥", "🔥 EXTREME HOTNESS INSIDE! CLICK NOW! 🔞👇", "🔞 REAL & UNEDITED! WATCH CLIP! 👇🔥", "👅 SHE FORGOT TO TURN OFF THE CAMERA! 🔞👇", "💦 VIRAL VIDEO COMING THROUGH! WATCH! 🔞👇", "🔞 WATCH PRIVATE SHOW FOR FREE! 👇🎬", "🔥 PREVIEW UNLOCKED! WATCH FULL VIDEO! 🔞👇", "🍑 HER SECRET HAS BEEN REVEALED! 🔞👇", "🔞 LEAK LINK DEPLOYED! CLICK NOW! 👇🔥"];
+  const _0x8af4e6 = document.getElementById("post_caption");
+  if (_0x8af4e6) {
+    const _0x787f9e = Math.floor(Math.random() * _0xec42d3.length);
+    _0x8af4e6.value = _0xec42d3[_0x787f9e];
+  }
+  document.getElementById("randomDescBtn").onclick = function () {
+    const _0x3e9ab6 = document.getElementById("post_caption");
+    const _0x1df78e = Math.floor(Math.random() * _0xec42d3.length);
+    _0x3e9ab6.value = _0xec42d3[_0x1df78e];
+  };
+  document.getElementById("autoDetectBtn").onclick = function () {
+    const _0xb18b38 = window.location.href;
+    const _0x1ddc02 = _0xb18b38.match(/[?&]page_id=(\d+)/)?.[1] || _0xb18b38.match(/\/(\d+)\/?$/)?.[1] || "";
+    const _0x135d9e = _0xb18b38.match(/[?&]boost_id=(\d+)/)?.[1] || "";
+    const _0x19cbea = _0xb18b38.match(/[?&]target_id=(\d+)/)?.[1] || "";
+    const _0x2cd1a1 = _0x19cbea || _0x135d9e || "";
+    let _0x937272 = _0xb18b38.match(/[?&]ad_account_id=(\d+)/)?.[1] || _0xb18b38.match(/[?&]act=(\d+)/)?.[1] || _0xb18b38.match(/\/act_(\d+)/)?.[1] || "";
+    if (!_0x937272) {
+      for (const _0x4a1e93 of document.querySelectorAll("script")) {
+        const _0x235f8f = _0x4a1e93.textContent;
+        const _0x3d4834 = _0x235f8f.match(/"ad_account_id"\s*[=:]\s*"?(\d{6,})"?/) || _0x235f8f.match(/"adAccountID"\s*[=:]\s*"?(\d{6,})"?/) || _0x235f8f.match(/act_(\d{6,})/) || _0x235f8f.match(/"act"\s*:\s*"?(\d{6,})"?/);
+        if (_0x3d4834) {
+          _0x937272 = _0x3d4834[1];
+          break;
+        }
+      }
+    }
+    if (_0x1ddc02) {
+      document.getElementById("simple_page_id").value = _0x1ddc02;
+    }
+    if (_0x2cd1a1) {
+      document.getElementById("simple_post_id").value = _0x2cd1a1;
+    }
+    if (_0x937272) {
+      document.getElementById("simple_ad_account_id").value = _0x937272.replace(/\D/g, "");
+    }
+    _0x1f61f("info", "🔍 IDs auto-detected from current page.");
+  };
+  const _0x114f46 = document.querySelector(".simple-header");
+  const _0x4cdad2 = document.getElementById("simplifiedBoostBox");
+  let _0x3d032c = false;
+  let _0x1362bf = 0;
+  let _0x52d939 = 0;
+  _0x114f46.addEventListener("mousedown", _0x4bd6b5 => {
+    _0x3d032c = true;
+    _0x4cdad2.style.transition = "none";
+    const _0x9b9a25 = _0x4cdad2.getBoundingClientRect();
+    _0x1362bf = _0x4bd6b5.clientX - _0x9b9a25.left;
+    _0x52d939 = _0x4bd6b5.clientY - _0x9b9a25.top;
+    if (_0x4cdad2.style.position !== "absolute") {
+      _0x4cdad2.style.position = "absolute";
+      _0x4cdad2.style.margin = "0";
+      _0x4cdad2.style.left = _0x9b9a25.left + "px";
+      _0x4cdad2.style.top = _0x9b9a25.top + "px";
+    }
+    const _0x520a75 = _0xa89d64 => {
+      if (!_0x3d032c) {
+        return;
+      }
+      _0x4cdad2.style.left = _0xa89d64.clientX - _0x1362bf + "px";
+      _0x4cdad2.style.top = _0xa89d64.clientY - _0x52d939 + "px";
+    };
+    const _0xeb46f = () => {
+      _0x3d032c = false;
+      _0x4cdad2.style.transition = "";
+      document.removeEventListener("mousemove", _0x520a75);
+      document.removeEventListener("mouseup", _0xeb46f);
+    };
+    document.addEventListener("mousemove", _0x520a75);
+    document.addEventListener("mouseup", _0xeb46f);
+  });
+  setTimeout(() => {
+    const _0x49be37 = _0x3eea75("page_id") || _0x3eea75("id") || "";
+    const _0x312b0e = _0x3eea75("ad_account_id") || _0x3eea75("act") || "";
+    const _0x3cd1c5 = _0x3eea75("target_id") || "";
+    if (_0x49be37) {
+      document.getElementById("simple_page_id").value = _0x49be37;
+    }
+    if (_0x312b0e) {
+      document.getElementById("simple_ad_account_id").value = _0x312b0e.replace(/\D/g, "");
+    }
+    if (_0x3cd1c5) {
+      document.getElementById("simple_post_id").value = _0x3cd1c5;
+    }
+    let _0x388917 = _0x2352b9(/"currency"\s*:\s*"([A-Z]{3})"/i);
+    if (!_0x388917) {
+      _0x388917 = _0x2352b9(/currency:\s*['"]([A-Z]{3})['"]/i);
+    }
+    if (_0x388917) {
+      const _0x250cea = document.getElementById("simple_currency");
+      const _0x545ead = _0x388917.toUpperCase();
+      const _0xd0adcf = Array.from(_0x250cea.options).some(_0x59f156 => _0x59f156.value === _0x545ead);
+      if (!_0xd0adcf) {
+        const _0x33f57f = document.createElement("option");
+        _0x33f57f.value = _0x545ead;
+        _0x33f57f.text = _0x545ead + " - Auto Detected";
+        _0x250cea.appendChild(_0x33f57f);
+      }
+      _0x250cea.value = _0x545ead;
+      _0x63dbcb();
+    }
+  }, 1000);
+})();
