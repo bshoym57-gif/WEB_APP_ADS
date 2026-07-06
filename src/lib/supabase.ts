@@ -1,14 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Try both Vite and standard Next.js env var formats
-const supabaseUrl = 
-  import.meta.env.VITE_SUPABASE_URL || 
-  import.meta.env.VITE_PUBLIC_SUPABASE_URL || 
-  'https://placeholder.supabase.co';
-const supabaseAnonKey = 
-  import.meta.env.VITE_SUPABASE_ANON_KEY || 
-  import.meta.env.VITE_PUBLIC_SUPABASE_ANON_KEY || 
-  'placeholder-key';
+// Get Supabase credentials from environment
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('[v0] Missing Supabase credentials. Make sure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY are set in .env');
+}
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
