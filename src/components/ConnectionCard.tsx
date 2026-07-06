@@ -31,6 +31,16 @@ export default function ConnectionCard({ state, onConnect }: ConnectionCardProps
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'connect', cookies: rawCookies }),
       });
+
+      if (!response.ok) {
+        console.log('[v0] Response status:', response.status);
+        setStatus({ 
+          type: 'error', 
+          message: `فشل الاتصال بالخادم (${response.status}). تأكد من نشر Edge Function وصحة المتغيرات البيئية.` 
+        });
+        return;
+      }
+
       const data = await response.json();
 
       if (!data.success) {
@@ -51,8 +61,13 @@ export default function ConnectionCard({ state, onConnect }: ConnectionCardProps
         type: 'success',
         message: `تم الاتصال بنجاح! User ID: ${data.userId || 'غير متوفر'}`,
       });
-    } catch {
-      setStatus({ type: 'error', message: 'فشل الاتصال بالخادم. تأكد من الاتصال بالإنترنت.' });
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      console.log('[v0] Connection error:', errorMessage);
+      setStatus({ 
+        type: 'error', 
+        message: `فشل الاتصال بالخادم. ${errorMessage || 'تأكد من الاتصال بالإنترنت وأن Edge Function مُنشر.'}` 
+      });
     } finally {
       setLoading(false);
     }
