@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', Tahoma, Arial, sans-serif;
+    background: radial-gradient(ellipse at top, #15304c 0%, #07111f 60%);
+    color: #f8fafc;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-ink-850/90 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-sm;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-white/10 bg-ink-800/90 text-slate-50 px-4 py-3 text-sm
+           outline-none transition-all duration-200 placeholder:text-slate-500
+           focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30 focus:bg-ink-800;
+  }
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-bold text-white border-none cursor-pointer
+           bg-gradient-to-br from-brand-500 to-brand-700
+           shadow-lg shadow-brand-600/30
+           transition-all duration-200
+           hover:shadow-xl hover:shadow-brand-500/40 hover:-translate-y-0.5
+           active:translate-y-0
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+  }
+  .btn-secondary {
+    @apply px-6 py-3 rounded-xl font-bold text-white border-none cursor-pointer
+           bg-gradient-to-br from-emerald2-500 to-emerald2-600
+           shadow-lg shadow-emerald2-600/25
+           transition-all duration-200
+           hover:shadow-xl hover:shadow-emerald2-500/35 hover:-translate-y-0.5
+           active:translate-y-0
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply px-4 py-2.5 rounded-xl font-semibold text-slate-300 cursor-pointer
+           border border-white/10 bg-white/5
+           transition-all duration-200
+           hover:bg-white/10 hover:text-white
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .status-badge {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold;
+  }
+  .shimmer-bg {
+    background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+    background-size: 200% 100%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
