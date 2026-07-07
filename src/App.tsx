@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Facebook, Zap, ShieldCheck } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import ConnectionCard from './components/ConnectionCard';
 import CampaignForm from './components/CampaignForm';
 import CampaignHistory from './components/CampaignHistory';
@@ -80,6 +81,7 @@ function App() {
           Boost Tool - جميع الحقوق محفوظة
         </p>
       </footer>
+      <SpeedInsights />
     </div>
   );
 }
